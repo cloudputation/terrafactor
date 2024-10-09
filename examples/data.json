@@ -1,0 +1,67 @@
+{
+  "infrastructure": {
+    "project_id": "proj-1234",
+    "environment": "production",
+    "resources": [
+      {
+        "resource_id": "vm-01",
+        "type": "virtual_machine",
+        "properties": {
+          "name": "prod-web-1",
+          "cpu_cores": 4,
+          "memory_gb": 16,
+          "disk": {
+            "size_gb": 100,
+            "type": "SSD"
+          },
+          "network_interfaces": [
+            {
+              "nic_id": "nic-01",
+              "subnet": "subnet-1",
+              "private_ip": "10.0.0.10",
+              "public_ip": "35.192.103.10"
+            },
+            {
+              "nic_id": "nic-02",
+              "subnet": "subnet-2",
+              "private_ip": "10.0.1.10",
+              "public_ip": null
+            }
+          ],
+          "security_groups": [
+            {
+              "group_id": "sg-01",
+              "rules": [
+                {
+                  "rule_id": "rule-01",
+                  "protocol": "TCP",
+                  "port_range": "80",
+                  "source": "0.0.0.0/0"
+                },
+                {
+                  "rule_id": "rule-02",
+                  "protocol": "TCP",
+                  "port_range": "443",
+                  "source": "0.0.0.0/0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "tags": [
+      "environment:production",
+      "region:us-central1",
+      "app:web-server",
+      "service:backend",
+      "team:devops",
+      "project:cloud-migration",
+      "tier:critical",
+      "compliance:ISO27001",
+      "monitoring:enabled",
+      "backup:daily",
+      "alerting:on-call"
+    ]
+  }
+}
