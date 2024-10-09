@@ -7,8 +7,8 @@ Provide Terraform like output functionality that you can integrate to your softw
 Takes JSON objects and outputs them in a Terraform-like format. It processes the structure, applying colored prefixes (`+` for creation, `-` for destruction) to indicate changes, and formats the output with customizable indentation.
 
 ## Module installation
-Install module: `go get github.com/cloudputation/terrafactor`
-Import the module in application code: `import "github.com/cloudputation/terrafactor"`
+- Install module: `go get github.com/cloudputation/terrafactor`
+- Import the module in application code: `import "github.com/cloudputation/terrafactor"`
 
 ## Terraform Output Usage
 operationTag should be set to either `create` or `destroy`.
