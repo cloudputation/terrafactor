@@ -1,4 +1,4 @@
-# Terrafactor
+# TerraFactor
 Add Terraform functionalities to your software
 
 
