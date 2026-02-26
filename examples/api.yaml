@@ -1,0 +1,831 @@
+openapi: "3.0.3"
+info:
+  title: Cloudputation Platform API
+  version: "1.0.0"
+  description: >
+    Example API for terrafactor testing. Covers a realistic SaaS platform with
+    projects, members, API keys, and webhooks — enough resource variety to
+    exercise all terrafactor template paths.
+
+servers:
+  - url: https://api.cloudputation.io/v1
+
+security:
+  - BearerAuth: []
+
+components:
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+
+    # -------------------------------------------------------------------------
+    # Project
+    # -------------------------------------------------------------------------
+    Project:
+      type: object
+      required: [name, org_id]
+      properties:
+        id:
+          type: string
+          readOnly: true
+          description: Unique project identifier.
+          example: proj_a1b2c3
+        name:
+          type: string
+          description: Human-readable project name.
+          example: my-project
+        org_id:
+          type: string
+          description: Organization this project belongs to.
+          example: org_x9y8z7
+        description:
+          type: string
+          description: Optional project description.
+          example: Main production project
+        region:
+          type: string
+          description: Deployment region.
+          enum: [us-east-1, us-west-2, eu-west-1, ap-southeast-1]
+          default: us-east-1
+          example: us-east-1
+        budget:
+          type: number
+          description: Monthly spend budget in USD. Zero means unlimited.
+          example: 500
+        tags:
+          type: object
+          additionalProperties:
+            type: string
+          description: Arbitrary key-value tags.
+          example:
+            env: production
+            team: platform
+        enabled:
+          type: boolean
+          default: true
+          description: Whether the project is active.
+        tier:
+          type: string
+          description: Billing tier for the project.
+          enum: [free, pro, enterprise]
+          default: free
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+
+    ProjectList:
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Project'
+        next_cursor:
+          type: string
+          description: Pagination cursor for the next page.
+
+    # -------------------------------------------------------------------------
+    # Member
+    # -------------------------------------------------------------------------
+    Member:
+      type: object
+      required: [email, role]
+      properties:
+        id:
+          type: string
+          readOnly: true
+          example: mem_d4e5f6
+        project_id:
+          type: string
+          readOnly: true
+          description: Project this member belongs to.
+        email:
+          type: string
+          format: email
+          description: Member email address.
+          example: alice@example.com
+        role:
+          type: string
+          description: Access role within the project.
+          enum: [owner, admin, editor, viewer]
+          example: editor
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+
+    MemberList:
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member'
+
+    # -------------------------------------------------------------------------
+    # Environment
+    # -------------------------------------------------------------------------
+    Environment:
+      type: object
+      required: [name, project_id]
+      properties:
+        id:
+          type: string
+          readOnly: true
+          example: env_m1n2o3
+        project_id:
+          type: string
+          description: Project this environment belongs to.
+          example: proj_a1b2c3
+        name:
+          type: string
+          description: Environment name (e.g. production, staging).
+          example: production
+        slug:
+          type: string
+          readOnly: true
+          description: URL-safe identifier derived from name.
+          example: production
+        variables:
+          type: object
+          additionalProperties:
+            type: string
+          description: Environment variable key-value pairs.
+        protected:
+          type: boolean
+          description: Whether the environment requires approval to deploy.
+          default: false
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+
+    EnvironmentList:
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Environment'
+
+    # -------------------------------------------------------------------------
+    # Webhook
+    # -------------------------------------------------------------------------
+    WebhookRetryPolicy:
+      type: object
+      properties:
+        max_attempts:
+          type: integer
+          minimum: 1
+          maximum: 10
+          default: 3
+        backoff_seconds:
+          type: integer
+          minimum: 1
+          maximum: 300
+          default: 30
+
+    Webhook:
+      type: object
+      required: [name, url, events]
+      properties:
+        id:
+          type: string
+          readOnly: true
+          example: wh_j1k2l3
+        project_id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          example: deploy-notifier
+        url:
+          type: string
+          format: uri
+          description: HTTPS endpoint that receives events.
+          example: https://hooks.example.com/deploy
+        secret:
+          type: string
+          description: >
+            HMAC signing secret. Write-only — not returned after creation.
+          writeOnly: true
+        events:
+          type: array
+          items:
+            type: string
+            enum:
+              - project.created
+              - project.deleted
+              - deploy.started
+              - deploy.succeeded
+              - deploy.failed
+              - member.invited
+              - member.removed
+              - apikey.created
+              - apikey.revoked
+          description: Event types this webhook subscribes to.
+        enabled:
+          type: boolean
+          default: true
+        retry_policy:
+          $ref: '#/components/schemas/WebhookRetryPolicy'
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+
+    WebhookList:
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Webhook'
+
+    # -------------------------------------------------------------------------
+    # Deployment
+    # -------------------------------------------------------------------------
+    Deployment:
+      type: object
+      required: [project_id, environment_id]
+      properties:
+        id:
+          type: string
+          readOnly: true
+          example: dep_r1s2t3
+        project_id:
+          type: string
+          description: Project being deployed.
+          example: proj_a1b2c3
+        environment_id:
+          type: string
+          description: Target environment for the deployment.
+          example: env_m1n2o3
+        status:
+          type: string
+          readOnly: true
+          description: Current deployment status.
+          enum: [pending, running, succeeded, failed]
+        triggered_by:
+          type: string
+          readOnly: true
+          description: ID of the member who triggered the deployment.
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        finished_at:
+          type: string
+          format: date-time
+          readOnly: true
+
+    DeploymentList:
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Deployment'
+
+    # -------------------------------------------------------------------------
+    # Errors
+    # -------------------------------------------------------------------------
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+        code:
+          type: string
+          example: not_found
+        message:
+          type: string
+          example: The requested resource does not exist.
+
+  responses:
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid authentication.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Conflict:
+      description: Resource already exists.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+# =============================================================================
+# Paths
+# =============================================================================
+paths:
+
+  # ---------------------------------------------------------------------------
+  # Projects
+  # ---------------------------------------------------------------------------
+  /projects:
+    get:
+      operationId: listProjects
+      summary: List projects
+      tags: [projects]
+      parameters:
+        - name: org_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: cursor
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectList'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+
+    post:
+      operationId: createProject
+      summary: Create a project
+      tags: [projects]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        "409":
+          $ref: '#/components/responses/Conflict'
+
+  /projects/{project_id}:
+    parameters:
+      - name: project_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+    get:
+      operationId: getProject
+      summary: Get a project
+      tags: [projects]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+    put:
+      operationId: updateProject
+      summary: Update a project
+      tags: [projects]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      operationId: deleteProject
+      summary: Delete a project
+      tags: [projects]
+      responses:
+        "204":
+          description: No Content
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+  # ---------------------------------------------------------------------------
+  # Members
+  # ---------------------------------------------------------------------------
+  /projects/{project_id}/members:
+    parameters:
+      - name: project_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+    get:
+      operationId: listMembers
+      summary: List project members
+      tags: [members]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberList'
+
+    post:
+      operationId: createMember
+      summary: Invite a member to a project
+      tags: [members]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Member'
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+        "409":
+          $ref: '#/components/responses/Conflict'
+
+  /projects/{project_id}/members/{member_id}:
+    parameters:
+      - name: project_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: member_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+    get:
+      operationId: getMember
+      summary: Get a member
+      tags: [members]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+    put:
+      operationId: updateMember
+      summary: Update member role
+      tags: [members]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Member'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      operationId: deleteMember
+      summary: Remove a member from a project
+      tags: [members]
+      responses:
+        "204":
+          description: No Content
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+  # ---------------------------------------------------------------------------
+  # Environments
+  # ---------------------------------------------------------------------------
+  /projects/{project_id}/environments:
+    parameters:
+      - name: project_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+    get:
+      operationId: listEnvironments
+      summary: List environments
+      tags: [environments]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnvironmentList'
+
+    post:
+      operationId: createEnvironment
+      summary: Create an environment
+      tags: [environments]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Environment'
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Environment'
+        "409":
+          $ref: '#/components/responses/Conflict'
+
+  /projects/{project_id}/environments/{environment_id}:
+    parameters:
+      - name: project_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: environment_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+    get:
+      operationId: getEnvironment
+      summary: Get an environment
+      tags: [environments]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Environment'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+    put:
+      operationId: updateEnvironment
+      summary: Update an environment
+      tags: [environments]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Environment'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Environment'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      operationId: deleteEnvironment
+      summary: Delete an environment
+      tags: [environments]
+      responses:
+        "204":
+          description: No Content
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+  # ---------------------------------------------------------------------------
+  # Webhooks
+  # ---------------------------------------------------------------------------
+  /projects/{project_id}/webhooks:
+    parameters:
+      - name: project_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+    get:
+      operationId: listWebhooks
+      summary: List webhooks
+      tags: [webhooks]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebhookList'
+
+    post:
+      operationId: createWebhook
+      summary: Create a webhook
+      tags: [webhooks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Webhook'
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webhook'
+
+  /projects/{project_id}/webhooks/{webhook_id}:
+    parameters:
+      - name: project_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: webhook_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+    get:
+      operationId: getWebhook
+      summary: Get a webhook
+      tags: [webhooks]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webhook'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+    put:
+      operationId: updateWebhook
+      summary: Update a webhook
+      tags: [webhooks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Webhook'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webhook'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      operationId: deleteWebhook
+      summary: Delete a webhook
+      tags: [webhooks]
+      responses:
+        "204":
+          description: No Content
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+  # ---------------------------------------------------------------------------
+  # Deployments
+  # ---------------------------------------------------------------------------
+  /projects/{project_id}/deployments:
+    parameters:
+      - name: project_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+    get:
+      operationId: listDeployments
+      summary: List deployments
+      tags: [deployments]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeploymentList'
+
+    post:
+      operationId: createDeployment
+      summary: Create a deployment
+      tags: [deployments]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Deployment'
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deployment'
+
+  /projects/{project_id}/deployments/{deployment_id}:
+    parameters:
+      - name: project_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: deployment_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+    get:
+      operationId: getDeployment
+      summary: Get a deployment
+      tags: [deployments]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deployment'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      operationId: deleteDeployment
+      summary: Cancel a deployment
+      tags: [deployments]
+      responses:
+        "204":
+          description: No Content
+        "404":
+          $ref: '#/components/responses/NotFound'

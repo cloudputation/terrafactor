@@ -1,0 +1,49 @@
+{
+  "provider": "testcloud",
+  "rendered_at": "2026-02-26T18:33:13Z",
+  "resources": {
+    "project": [
+      "budget",
+      "created_at",
+      "description",
+      "enabled",
+      "id",
+      "name",
+      "org_id",
+      "region",
+      "tags",
+      "updated_at"
+    ],
+    "projects_environment": [
+      "created_at",
+      "id",
+      "name",
+      "project_id",
+      "protected",
+      "slug",
+      "updated_at",
+      "variables"
+    ],
+    "projects_member": [
+      "accepted",
+      "created_at",
+      "email",
+      "id",
+      "invited_by",
+      "project_id",
+      "role"
+    ],
+    "projects_webhook": [
+      "created_at",
+      "enabled",
+      "events",
+      "id",
+      "name",
+      "project_id",
+      "retry_policy",
+      "secret",
+      "updated_at",
+      "url"
+    ]
+  }
+}

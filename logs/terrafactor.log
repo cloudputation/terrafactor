@@ -1,0 +1,1013 @@
+2026-02-25T22:29:35.120-0500 [INFO]  TERRAFACTOR: Building provider scaffold: name=mytest
+2026-02-25T22:29:35.129-0500 [INFO]  TERRAFACTOR: Provider scaffolded: path=engine/store/mytest
+2026-02-26T02:23:19.150-0500 [INFO]  TERRAFACTOR: Building provider scaffold: name=testcloud config=examples/provider.hcl
+2026-02-26T02:23:19.161-0500 [INFO]  TERRAFACTOR: Provider scaffolded: path=engine/store/testcloud
+2026-02-26T02:23:41.775-0500 [INFO]  TERRAFACTOR: Building provider scaffold: name=testcloud config=examples/provider.hcl
+2026-02-26T02:23:41.784-0500 [INFO]  TERRAFACTOR: Provider scaffolded: path=engine/store/testcloud
+2026-02-26T02:43:55.567-0500 [INFO]  TERRAFACTOR: Building provider scaffold: name=testcloud config=examples/provider.hcl
+2026-02-26T02:43:55.577-0500 [INFO]  TERRAFACTOR: Provider scaffolded: path=engine/store/testcloud
+2026-02-26T02:49:57.360-0500 [INFO]  TERRAFACTOR: Building provider scaffold: name=testcloud config=examples/provider.hcl
+2026-02-26T02:49:57.361-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T02:49:57.361-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T02:49:57.361-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T02:49:57.361-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T02:49:57.361-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T02:49:57.361-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T02:49:57.361-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T02:49:57.361-0500 [INFO]  TERRAFACTOR: Copied file: file=.copywrite.hcl
+2026-02-26T02:49:57.361-0500 [INFO]  TERRAFACTOR: Rendered template: file=.github/CODEOWNERS
+2026-02-26T02:49:57.361-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/CODE_OF_CONDUCT.md
+2026-02-26T02:49:57.362-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/dependabot.yml
+2026-02-26T02:49:57.362-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/pull_request_template.md
+2026-02-26T02:49:57.362-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/issue-comment-triage.yml
+2026-02-26T02:49:57.363-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/lock.yml
+2026-02-26T02:49:57.363-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/release.yml
+2026-02-26T02:49:57.363-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/test.yml
+2026-02-26T02:49:57.363-0500 [INFO]  TERRAFACTOR: Copied file: file=.gitignore
+2026-02-26T02:49:57.363-0500 [INFO]  TERRAFACTOR: Copied file: file=.golangci.yml
+2026-02-26T02:49:57.363-0500 [INFO]  TERRAFACTOR: Copied file: file=.goreleaser.yml
+2026-02-26T02:49:57.363-0500 [INFO]  TERRAFACTOR: Copied file: file=CHANGELOG.md
+2026-02-26T02:49:57.364-0500 [INFO]  TERRAFACTOR: Copied file: file=GNUmakefile
+2026-02-26T02:49:57.364-0500 [INFO]  TERRAFACTOR: Copied file: file=LICENSE
+2026-02-26T02:49:57.364-0500 [INFO]  TERRAFACTOR: Copied file: file=META.d/_summary.yaml
+2026-02-26T02:49:57.364-0500 [INFO]  TERRAFACTOR: Copied file: file=README.md
+2026-02-26T02:49:57.364-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/data-sources/example.md
+2026-02-26T02:49:57.364-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/ephemeral-resources/example.md
+2026-02-26T02:49:57.364-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/index.md
+2026-02-26T02:49:57.365-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/resources/example.md
+2026-02-26T02:49:57.365-0500 [INFO]  TERRAFACTOR: Copied file: file=examples/README.md
+2026-02-26T02:49:57.365-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/data-sources/data-source.tf
+2026-02-26T02:49:57.365-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/ephemeral-resources/ephemeral-resource.tf
+2026-02-26T02:49:57.366-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/provider/provider.tf
+2026-02-26T02:49:57.366-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/resources/import.sh
+2026-02-26T02:49:57.366-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/resources/resource.tf
+2026-02-26T02:49:57.366-0500 [INFO]  TERRAFACTOR: Rendered template: file=go.mod
+2026-02-26T02:49:57.367-0500 [INFO]  TERRAFACTOR: Copied file: file=go.sum
+2026-02-26T02:49:57.367-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/data_source.go
+2026-02-26T02:49:57.367-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/data_source_test.go
+2026-02-26T02:49:57.367-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/ephemeral_resource.go
+2026-02-26T02:49:57.367-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/ephemeral_resource_test.go
+2026-02-26T02:49:57.367-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider.go
+2026-02-26T02:49:57.368-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider_test.go
+2026-02-26T02:49:57.368-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/resource.go
+2026-02-26T02:49:57.368-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/resource_test.go
+2026-02-26T02:49:57.368-0500 [INFO]  TERRAFACTOR: Rendered template: file=main.go
+2026-02-26T02:49:57.368-0500 [INFO]  TERRAFACTOR: Rendered template: file=terraform-registry-manifest.json
+2026-02-26T02:49:57.368-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.mod
+2026-02-26T02:49:57.369-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.sum
+2026-02-26T02:49:57.369-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/tools.go
+2026-02-26T02:49:57.369-0500 [INFO]  TERRAFACTOR: Scaffold complete: rendered=17 copied=25 total=42 destination=/Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud
+2026-02-26T03:37:39.485-0500 [INFO]  TERRAFACTOR: Building provider scaffold: name=testcloud config=examples/provider.hcl
+2026-02-26T03:37:39.487-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T03:37:39.487-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T03:37:39.487-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T03:37:39.487-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T03:37:39.487-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T03:37:39.488-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T03:37:39.488-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T03:37:39.488-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T03:37:39.488-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T03:37:39.488-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T03:37:39.488-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T03:37:39.488-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T03:37:39.489-0500 [INFO]  TERRAFACTOR: Copied file: file=.copywrite.hcl
+2026-02-26T03:37:39.489-0500 [INFO]  TERRAFACTOR: Rendered template: file=.github/CODEOWNERS
+2026-02-26T03:37:39.490-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/CODE_OF_CONDUCT.md
+2026-02-26T03:37:39.490-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/dependabot.yml
+2026-02-26T03:37:39.491-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/pull_request_template.md
+2026-02-26T03:37:39.491-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/issue-comment-triage.yml
+2026-02-26T03:37:39.491-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/lock.yml
+2026-02-26T03:37:39.491-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/release.yml
+2026-02-26T03:37:39.492-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/test.yml
+2026-02-26T03:37:39.492-0500 [INFO]  TERRAFACTOR: Copied file: file=.gitignore
+2026-02-26T03:37:39.492-0500 [INFO]  TERRAFACTOR: Copied file: file=.golangci.yml
+2026-02-26T03:37:39.492-0500 [INFO]  TERRAFACTOR: Copied file: file=.goreleaser.yml
+2026-02-26T03:37:39.492-0500 [INFO]  TERRAFACTOR: Copied file: file=CHANGELOG.md
+2026-02-26T03:37:39.492-0500 [INFO]  TERRAFACTOR: Copied file: file=GNUmakefile
+2026-02-26T03:37:39.492-0500 [INFO]  TERRAFACTOR: Copied file: file=LICENSE
+2026-02-26T03:37:39.492-0500 [INFO]  TERRAFACTOR: Copied file: file=META.d/_summary.yaml
+2026-02-26T03:37:39.492-0500 [INFO]  TERRAFACTOR: Copied file: file=README.md
+2026-02-26T03:37:39.493-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/data-sources/example.md
+2026-02-26T03:37:39.493-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/ephemeral-resources/example.md
+2026-02-26T03:37:39.493-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/index.md
+2026-02-26T03:37:39.493-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/resources/example.md
+2026-02-26T03:37:39.493-0500 [INFO]  TERRAFACTOR: Copied file: file=examples/README.md
+2026-02-26T03:37:39.494-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/provider/provider.tf
+2026-02-26T03:37:39.494-0500 [INFO]  TERRAFACTOR: Rendered template: file=go.mod
+2026-02-26T03:37:39.494-0500 [INFO]  TERRAFACTOR: Copied file: file=go.sum
+2026-02-26T03:37:39.494-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider.go
+2026-02-26T03:37:39.495-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider_test.go
+2026-02-26T03:37:39.495-0500 [INFO]  TERRAFACTOR: Rendered template: file=main.go
+2026-02-26T03:37:39.495-0500 [INFO]  TERRAFACTOR: Rendered template: file=terraform-registry-manifest.json
+2026-02-26T03:37:39.495-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.mod
+2026-02-26T03:37:39.496-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.sum
+2026-02-26T03:37:39.496-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/tools.go
+2026-02-26T03:37:39.496-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource.go
+2026-02-26T03:37:39.496-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource_test.go
+2026-02-26T03:37:39.496-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source.go
+2026-02-26T03:37:39.496-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source_test.go
+2026-02-26T03:37:39.496-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource.go
+2026-02-26T03:37:39.497-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource_test.go
+2026-02-26T03:37:39.497-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/resource.tf
+2026-02-26T03:37:39.497-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/import.sh
+2026-02-26T03:37:39.497-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/data-sources/project/data-source.tf
+2026-02-26T03:37:39.497-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/ephemeral-resources/project/ephemeral-resource.tf
+2026-02-26T03:37:39.497-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource.go
+2026-02-26T03:37:39.497-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource_test.go
+2026-02-26T03:37:39.497-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source.go
+2026-02-26T03:37:39.497-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source_test.go
+2026-02-26T03:37:39.497-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource.go
+2026-02-26T03:37:39.498-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource_test.go
+2026-02-26T03:37:39.498-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/resource.tf
+2026-02-26T03:37:39.498-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/import.sh
+2026-02-26T03:37:39.498-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/data-sources/projects_api_key/data-source.tf
+2026-02-26T03:37:39.498-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/ephemeral-resources/projects_api_key/ephemeral-resource.tf
+2026-02-26T03:37:39.498-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource.go
+2026-02-26T03:37:39.498-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource_test.go
+2026-02-26T03:37:39.498-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source.go
+2026-02-26T03:37:39.498-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source_test.go
+2026-02-26T03:37:39.498-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource.go
+2026-02-26T03:37:39.498-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource_test.go
+2026-02-26T03:37:39.499-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/resource.tf
+2026-02-26T03:37:39.499-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/import.sh
+2026-02-26T03:37:39.499-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/data-sources/projects_member/data-source.tf
+2026-02-26T03:37:39.499-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/ephemeral-resources/projects_member/ephemeral-resource.tf
+2026-02-26T03:37:39.499-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource.go
+2026-02-26T03:37:39.499-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource_test.go
+2026-02-26T03:37:39.499-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source.go
+2026-02-26T03:37:39.499-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source_test.go
+2026-02-26T03:37:39.499-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource.go
+2026-02-26T03:37:39.499-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource_test.go
+2026-02-26T03:37:39.499-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/resource.tf
+2026-02-26T03:37:39.500-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/import.sh
+2026-02-26T03:37:39.500-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/data-sources/projects_webhook/data-source.tf
+2026-02-26T03:37:39.500-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/ephemeral-resources/projects_webhook/ephemeral-resource.tf
+2026-02-26T03:37:39.500-0500 [INFO]  TERRAFACTOR: Scaffold complete: rendered=47 copied=25 total=72 resources=4 destination=/Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud
+2026-02-26T11:19:30.022-0500 [INFO]  TERRAFACTOR: Building provider scaffold: name=testcloud config=examples/provider.hcl
+2026-02-26T11:19:30.023-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:19:30.023-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:19:30.023-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:19:30.023-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:19:30.023-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:19:30.025-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:19:30.025-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:19:30.025-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:19:30.025-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:19:30.025-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:19:30.025-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:19:30.025-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:19:30.026-0500 [INFO]  TERRAFACTOR: Copied file: file=.copywrite.hcl
+2026-02-26T11:19:30.026-0500 [INFO]  TERRAFACTOR: Rendered template: file=.github/CODEOWNERS
+2026-02-26T11:19:30.027-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/CODE_OF_CONDUCT.md
+2026-02-26T11:19:30.027-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/dependabot.yml
+2026-02-26T11:19:30.027-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/pull_request_template.md
+2026-02-26T11:19:30.028-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/issue-comment-triage.yml
+2026-02-26T11:19:30.028-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/lock.yml
+2026-02-26T11:19:30.028-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/release.yml
+2026-02-26T11:19:30.028-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/test.yml
+2026-02-26T11:19:30.028-0500 [INFO]  TERRAFACTOR: Copied file: file=.gitignore
+2026-02-26T11:19:30.028-0500 [INFO]  TERRAFACTOR: Copied file: file=.golangci.yml
+2026-02-26T11:19:30.029-0500 [INFO]  TERRAFACTOR: Copied file: file=.goreleaser.yml
+2026-02-26T11:19:30.029-0500 [INFO]  TERRAFACTOR: Copied file: file=CHANGELOG.md
+2026-02-26T11:19:30.029-0500 [INFO]  TERRAFACTOR: Copied file: file=GNUmakefile
+2026-02-26T11:19:30.029-0500 [INFO]  TERRAFACTOR: Copied file: file=LICENSE
+2026-02-26T11:19:30.029-0500 [INFO]  TERRAFACTOR: Copied file: file=META.d/_summary.yaml
+2026-02-26T11:19:30.029-0500 [INFO]  TERRAFACTOR: Copied file: file=README.md
+2026-02-26T11:19:30.029-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/data-sources/example.md
+2026-02-26T11:19:30.030-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/ephemeral-resources/example.md
+2026-02-26T11:19:30.030-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/index.md
+2026-02-26T11:19:30.030-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/resources/example.md
+2026-02-26T11:19:30.030-0500 [INFO]  TERRAFACTOR: Copied file: file=examples/README.md
+2026-02-26T11:19:30.030-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/provider/provider.tf
+2026-02-26T11:19:30.030-0500 [INFO]  TERRAFACTOR: Rendered template: file=go.mod
+2026-02-26T11:19:30.031-0500 [INFO]  TERRAFACTOR: Copied file: file=go.sum
+2026-02-26T11:19:30.031-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider.go
+2026-02-26T11:19:30.031-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider_test.go
+2026-02-26T11:19:30.032-0500 [INFO]  TERRAFACTOR: Rendered template: file=main.go
+2026-02-26T11:19:30.032-0500 [INFO]  TERRAFACTOR: Rendered template: file=terraform-registry-manifest.json
+2026-02-26T11:19:30.032-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.mod
+2026-02-26T11:19:30.032-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.sum
+2026-02-26T11:19:30.032-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/tools.go
+2026-02-26T11:19:30.033-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource.go
+2026-02-26T11:19:30.033-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource_test.go
+2026-02-26T11:19:30.033-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source.go
+2026-02-26T11:19:30.033-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source_test.go
+2026-02-26T11:19:30.033-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource.go
+2026-02-26T11:19:30.034-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource_test.go
+2026-02-26T11:19:30.034-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/resource.tf
+2026-02-26T11:19:30.034-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/import.sh
+2026-02-26T11:19:30.034-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/data-sources/project/data-source.tf
+2026-02-26T11:19:30.034-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/ephemeral-resources/project/ephemeral-resource.tf
+2026-02-26T11:19:30.034-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource.go
+2026-02-26T11:19:30.034-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource_test.go
+2026-02-26T11:19:30.034-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source.go
+2026-02-26T11:19:30.034-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source_test.go
+2026-02-26T11:19:30.034-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource.go
+2026-02-26T11:19:30.035-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource_test.go
+2026-02-26T11:19:30.035-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/resource.tf
+2026-02-26T11:19:30.035-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/import.sh
+2026-02-26T11:19:30.035-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/data-sources/projects_api_key/data-source.tf
+2026-02-26T11:19:30.035-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/ephemeral-resources/projects_api_key/ephemeral-resource.tf
+2026-02-26T11:19:30.035-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource.go
+2026-02-26T11:19:30.035-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource_test.go
+2026-02-26T11:19:30.035-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source.go
+2026-02-26T11:19:30.035-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source_test.go
+2026-02-26T11:19:30.035-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource.go
+2026-02-26T11:19:30.035-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource_test.go
+2026-02-26T11:19:30.036-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/resource.tf
+2026-02-26T11:19:30.036-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/import.sh
+2026-02-26T11:19:30.036-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/data-sources/projects_member/data-source.tf
+2026-02-26T11:19:30.036-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/ephemeral-resources/projects_member/ephemeral-resource.tf
+2026-02-26T11:19:30.036-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource.go
+2026-02-26T11:19:30.036-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource_test.go
+2026-02-26T11:19:30.036-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source.go
+2026-02-26T11:19:30.036-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source_test.go
+2026-02-26T11:19:30.036-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource.go
+2026-02-26T11:19:30.037-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource_test.go
+2026-02-26T11:19:30.037-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/resource.tf
+2026-02-26T11:19:30.037-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/import.sh
+2026-02-26T11:19:30.037-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/data-sources/projects_webhook/data-source.tf
+2026-02-26T11:19:30.037-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/ephemeral-resources/projects_webhook/ephemeral-resource.tf
+2026-02-26T11:19:30.037-0500 [INFO]  TERRAFACTOR: Scaffold complete: rendered=47 copied=25 total=72 resources=4 destination=/Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud
+2026-02-26T11:23:58.574-0500 [INFO]  TERRAFACTOR: Planning provider update: name=testcloud config=examples/provider.hcl
+2026-02-26T11:23:58.576-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:23:58.576-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:23:58.576-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:23:58.576-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:23:58.576-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:23:58.576-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:23:58.576-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:23:58.576-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:23:58.576-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:23:58.576-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:23:58.576-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:23:58.576-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:28:28.176-0500 [INFO]  TERRAFACTOR: Planning provider update: name=testcloud config=examples/provider.hcl
+2026-02-26T11:28:28.178-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:28:28.178-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:28:28.178-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:28:28.178-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:28:28.178-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:28:28.182-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:28:28.182-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:28:28.182-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:28:28.182-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:28:28.182-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:28:28.182-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:28:28.182-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:28:44.390-0500 [INFO]  TERRAFACTOR: Applying provider update: name=testcloud config=examples/provider.hcl
+2026-02-26T11:28:44.391-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:28:44.391-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:28:44.391-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:28:44.391-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:28:44.391-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:28:44.392-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:28:44.392-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:28:44.392-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:28:44.392-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:28:44.392-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:28:44.392-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:28:44.392-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:28:44.393-0500 [INFO]  TERRAFACTOR: Copied file: file=.copywrite.hcl
+2026-02-26T11:28:44.393-0500 [INFO]  TERRAFACTOR: Rendered template: file=.github/CODEOWNERS
+2026-02-26T11:28:44.394-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/CODE_OF_CONDUCT.md
+2026-02-26T11:28:44.394-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/dependabot.yml
+2026-02-26T11:28:44.394-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/pull_request_template.md
+2026-02-26T11:28:44.395-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/issue-comment-triage.yml
+2026-02-26T11:28:44.395-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/lock.yml
+2026-02-26T11:28:44.395-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/release.yml
+2026-02-26T11:28:44.395-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/test.yml
+2026-02-26T11:28:44.395-0500 [INFO]  TERRAFACTOR: Copied file: file=.gitignore
+2026-02-26T11:28:44.395-0500 [INFO]  TERRAFACTOR: Copied file: file=.golangci.yml
+2026-02-26T11:28:44.396-0500 [INFO]  TERRAFACTOR: Copied file: file=.goreleaser.yml
+2026-02-26T11:28:44.396-0500 [INFO]  TERRAFACTOR: Copied file: file=CHANGELOG.md
+2026-02-26T11:28:44.396-0500 [INFO]  TERRAFACTOR: Copied file: file=GNUmakefile
+2026-02-26T11:28:44.396-0500 [INFO]  TERRAFACTOR: Copied file: file=LICENSE
+2026-02-26T11:28:44.396-0500 [INFO]  TERRAFACTOR: Copied file: file=META.d/_summary.yaml
+2026-02-26T11:28:44.396-0500 [INFO]  TERRAFACTOR: Copied file: file=README.md
+2026-02-26T11:28:44.396-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/data-sources/example.md
+2026-02-26T11:28:44.396-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/ephemeral-resources/example.md
+2026-02-26T11:28:44.396-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/index.md
+2026-02-26T11:28:44.396-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/resources/example.md
+2026-02-26T11:28:44.397-0500 [INFO]  TERRAFACTOR: Copied file: file=examples/README.md
+2026-02-26T11:28:44.397-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/provider/provider.tf
+2026-02-26T11:28:44.397-0500 [INFO]  TERRAFACTOR: Rendered template: file=go.mod
+2026-02-26T11:28:44.397-0500 [INFO]  TERRAFACTOR: Copied file: file=go.sum
+2026-02-26T11:28:44.398-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider.go
+2026-02-26T11:28:44.398-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider_test.go
+2026-02-26T11:28:44.398-0500 [INFO]  TERRAFACTOR: Rendered template: file=main.go
+2026-02-26T11:28:44.398-0500 [INFO]  TERRAFACTOR: Rendered template: file=terraform-registry-manifest.json
+2026-02-26T11:28:44.398-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.mod
+2026-02-26T11:28:44.399-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.sum
+2026-02-26T11:28:44.399-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/tools.go
+2026-02-26T11:28:44.399-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource.go
+2026-02-26T11:28:44.399-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource_test.go
+2026-02-26T11:28:44.400-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source.go
+2026-02-26T11:28:44.400-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source_test.go
+2026-02-26T11:28:44.400-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource.go
+2026-02-26T11:28:44.400-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource_test.go
+2026-02-26T11:28:44.400-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/resource.tf
+2026-02-26T11:28:44.400-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/import.sh
+2026-02-26T11:28:44.400-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/data-sources/project/data-source.tf
+2026-02-26T11:28:44.400-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/ephemeral-resources/project/ephemeral-resource.tf
+2026-02-26T11:28:44.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource.go
+2026-02-26T11:28:44.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource_test.go
+2026-02-26T11:28:44.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source.go
+2026-02-26T11:28:44.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source_test.go
+2026-02-26T11:28:44.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource.go
+2026-02-26T11:28:44.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource_test.go
+2026-02-26T11:28:44.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/resource.tf
+2026-02-26T11:28:44.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/import.sh
+2026-02-26T11:28:44.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/data-sources/projects_api_key/data-source.tf
+2026-02-26T11:28:44.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/ephemeral-resources/projects_api_key/ephemeral-resource.tf
+2026-02-26T11:28:44.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource.go
+2026-02-26T11:28:44.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource_test.go
+2026-02-26T11:28:44.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source.go
+2026-02-26T11:28:44.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source_test.go
+2026-02-26T11:28:44.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource.go
+2026-02-26T11:28:44.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource_test.go
+2026-02-26T11:28:44.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/resource.tf
+2026-02-26T11:28:44.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/import.sh
+2026-02-26T11:28:44.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/data-sources/projects_member/data-source.tf
+2026-02-26T11:28:44.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/ephemeral-resources/projects_member/ephemeral-resource.tf
+2026-02-26T11:28:44.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource.go
+2026-02-26T11:28:44.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource_test.go
+2026-02-26T11:28:44.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source.go
+2026-02-26T11:28:44.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source_test.go
+2026-02-26T11:28:44.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource.go
+2026-02-26T11:28:44.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource_test.go
+2026-02-26T11:28:44.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/resource.tf
+2026-02-26T11:28:44.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/import.sh
+2026-02-26T11:28:44.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/data-sources/projects_webhook/data-source.tf
+2026-02-26T11:28:44.404-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/ephemeral-resources/projects_webhook/ephemeral-resource.tf
+2026-02-26T11:28:44.404-0500 [INFO]  TERRAFACTOR: Apply complete: rendered=47 copied=25 total=72 resources=4 destination=/Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud
+2026-02-26T11:30:49.553-0500 [INFO]  TERRAFACTOR: Destroying provider: name=testcloud
+2026-02-26T11:30:49.560-0500 [INFO]  TERRAFACTOR: Provider destroyed: name=testcloud path=/Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud
+2026-02-26T11:32:37.913-0500 [INFO]  TERRAFACTOR: Destroying provider: name=examples/provider.hcl
+2026-02-26T11:32:37.913-0500 [ERROR] TERRAFACTOR: FATAL: Failed to destroy provider: name=examples/provider.hcl error="provider \"examples/provider.hcl\" not found at /Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/examples/provider.hcl"
+2026-02-26T11:34:17.174-0500 [ERROR] TERRAFACTOR: FATAL: Error executing command: %v: EXTRA_VALUE_AT_END="accepts 2 arg(s), received 1"
+2026-02-26T11:34:37.342-0500 [INFO]  TERRAFACTOR: Destroying provider: name=testcloud
+2026-02-26T11:34:37.343-0500 [ERROR] TERRAFACTOR: FATAL: Failed to destroy provider: name=testcloud error="provider \"testcloud\" not found at /Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud"
+2026-02-26T11:34:54.044-0500 [INFO]  TERRAFACTOR: Destroying provider: name=testcloud
+2026-02-26T11:34:54.044-0500 [ERROR] TERRAFACTOR: FATAL: Failed to destroy provider: name=testcloud error="provider \"testcloud\" not found at /Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud"
+2026-02-26T11:36:35.774-0500 [INFO]  TERRAFACTOR: Destroying provider: name=testcloud
+2026-02-26T11:36:35.774-0500 [ERROR] TERRAFACTOR: FATAL: Failed to destroy provider: name=testcloud error="provider \"testcloud\" has not been built yet"
+2026-02-26T11:38:13.052-0500 [INFO]  TERRAFACTOR: Destroying provider: name=testcloud
+2026-02-26T11:38:13.052-0500 [ERROR] TERRAFACTOR: FATAL: provider "testcloud" not found in store
+2026-02-26T11:39:20.635-0500 [INFO]  TERRAFACTOR: provider "testcloud" not found in store
+2026-02-26T11:42:11.780-0500 [INFO]  TERRAFACTOR: Planning provider update: config=examples/provider.hcl
+2026-02-26T11:42:11.781-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:42:11.781-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:42:11.781-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:42:11.781-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:42:11.781-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:42:11.782-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:42:11.782-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:42:11.782-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:42:11.782-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:42:11.782-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:42:11.782-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:42:11.782-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:42:11.782-0500 [INFO]  TERRAFACTOR: no state found for provider "testcloud" — run 'provider build' first: open /Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud/.terrafactor-state.json: no such file or directory
+2026-02-26T11:44:50.244-0500 [INFO]  TERRAFACTOR: Planning provider update: config=examples/provider.hcl
+2026-02-26T11:44:50.245-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:44:50.245-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:44:50.245-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:44:50.245-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:44:50.245-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:44:50.247-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:44:50.247-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:44:50.247-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:44:50.247-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:44:50.247-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:44:50.247-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:44:50.247-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:49:34.757-0500 [INFO]  TERRAFACTOR: Planning provider update: config=examples/provider.hcl
+2026-02-26T11:49:34.758-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:49:34.758-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:49:34.758-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:49:34.758-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:49:34.758-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:49:34.759-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:49:34.759-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:49:34.759-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:49:34.759-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:49:34.759-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:49:34.759-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:49:34.759-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:49:44.881-0500 [INFO]  TERRAFACTOR: Planning provider update: config=examples/provider.hcl
+2026-02-26T11:49:44.882-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:49:44.882-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:49:44.882-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:49:44.882-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:49:44.882-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:49:44.884-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:49:44.884-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:49:44.884-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:49:44.884-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:49:44.884-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:49:44.884-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:49:44.884-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:49:54.149-0500 [INFO]  TERRAFACTOR: Planning provider update: config=examples/provider.hcl
+2026-02-26T11:49:54.150-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:49:54.150-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:49:54.150-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:49:54.150-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:49:54.150-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:49:54.151-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:49:54.151-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:49:54.151-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:49:54.151-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:49:54.151-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:49:54.152-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:49:54.152-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:50:54.216-0500 [INFO]  TERRAFACTOR: Building provider scaffold: config=examples/provider.hcl
+2026-02-26T11:50:54.217-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:50:54.217-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:50:54.217-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:50:54.217-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:50:54.217-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:50:54.219-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:50:54.219-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:50:54.219-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:50:54.219-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:50:54.219-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:50:54.219-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:50:54.219-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:50:54.220-0500 [INFO]  TERRAFACTOR: Copied file: file=.copywrite.hcl
+2026-02-26T11:50:54.221-0500 [INFO]  TERRAFACTOR: Rendered template: file=.github/CODEOWNERS
+2026-02-26T11:50:54.221-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/CODE_OF_CONDUCT.md
+2026-02-26T11:50:54.221-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/dependabot.yml
+2026-02-26T11:50:54.222-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/pull_request_template.md
+2026-02-26T11:50:54.222-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/issue-comment-triage.yml
+2026-02-26T11:50:54.222-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/lock.yml
+2026-02-26T11:50:54.223-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/release.yml
+2026-02-26T11:50:54.223-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/test.yml
+2026-02-26T11:50:54.223-0500 [INFO]  TERRAFACTOR: Copied file: file=.gitignore
+2026-02-26T11:50:54.223-0500 [INFO]  TERRAFACTOR: Copied file: file=.golangci.yml
+2026-02-26T11:50:54.223-0500 [INFO]  TERRAFACTOR: Copied file: file=.goreleaser.yml
+2026-02-26T11:50:54.223-0500 [INFO]  TERRAFACTOR: Copied file: file=CHANGELOG.md
+2026-02-26T11:50:54.223-0500 [INFO]  TERRAFACTOR: Copied file: file=GNUmakefile
+2026-02-26T11:50:54.224-0500 [INFO]  TERRAFACTOR: Copied file: file=LICENSE
+2026-02-26T11:50:54.224-0500 [INFO]  TERRAFACTOR: Copied file: file=META.d/_summary.yaml
+2026-02-26T11:50:54.224-0500 [INFO]  TERRAFACTOR: Copied file: file=README.md
+2026-02-26T11:50:54.224-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/data-sources/example.md
+2026-02-26T11:50:54.224-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/ephemeral-resources/example.md
+2026-02-26T11:50:54.224-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/index.md
+2026-02-26T11:50:54.225-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/resources/example.md
+2026-02-26T11:50:54.225-0500 [INFO]  TERRAFACTOR: Copied file: file=examples/README.md
+2026-02-26T11:50:54.225-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/provider/provider.tf
+2026-02-26T11:50:54.226-0500 [INFO]  TERRAFACTOR: Rendered template: file=go.mod
+2026-02-26T11:50:54.226-0500 [INFO]  TERRAFACTOR: Copied file: file=go.sum
+2026-02-26T11:50:54.226-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider.go
+2026-02-26T11:50:54.226-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider_test.go
+2026-02-26T11:50:54.227-0500 [INFO]  TERRAFACTOR: Rendered template: file=main.go
+2026-02-26T11:50:54.227-0500 [INFO]  TERRAFACTOR: Rendered template: file=terraform-registry-manifest.json
+2026-02-26T11:50:54.227-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.mod
+2026-02-26T11:50:54.227-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.sum
+2026-02-26T11:50:54.227-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/tools.go
+2026-02-26T11:50:54.228-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource.go
+2026-02-26T11:50:54.228-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource_test.go
+2026-02-26T11:50:54.228-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source.go
+2026-02-26T11:50:54.228-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source_test.go
+2026-02-26T11:50:54.229-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource.go
+2026-02-26T11:50:54.229-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource_test.go
+2026-02-26T11:50:54.229-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/resource.tf
+2026-02-26T11:50:54.229-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/import.sh
+2026-02-26T11:50:54.229-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/data-sources/project/data-source.tf
+2026-02-26T11:50:54.229-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/ephemeral-resources/project/ephemeral-resource.tf
+2026-02-26T11:50:54.229-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource.go
+2026-02-26T11:50:54.229-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource_test.go
+2026-02-26T11:50:54.230-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source.go
+2026-02-26T11:50:54.230-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source_test.go
+2026-02-26T11:50:54.230-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource.go
+2026-02-26T11:50:54.230-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource_test.go
+2026-02-26T11:50:54.230-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/resource.tf
+2026-02-26T11:50:54.230-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/import.sh
+2026-02-26T11:50:54.230-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/data-sources/projects_api_key/data-source.tf
+2026-02-26T11:50:54.230-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/ephemeral-resources/projects_api_key/ephemeral-resource.tf
+2026-02-26T11:50:54.230-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource.go
+2026-02-26T11:50:54.231-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource_test.go
+2026-02-26T11:50:54.231-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source.go
+2026-02-26T11:50:54.231-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source_test.go
+2026-02-26T11:50:54.231-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource.go
+2026-02-26T11:50:54.231-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource_test.go
+2026-02-26T11:50:54.231-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/resource.tf
+2026-02-26T11:50:54.231-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/import.sh
+2026-02-26T11:50:54.231-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/data-sources/projects_member/data-source.tf
+2026-02-26T11:50:54.231-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/ephemeral-resources/projects_member/ephemeral-resource.tf
+2026-02-26T11:50:54.231-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource.go
+2026-02-26T11:50:54.232-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource_test.go
+2026-02-26T11:50:54.232-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source.go
+2026-02-26T11:50:54.232-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source_test.go
+2026-02-26T11:50:54.232-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource.go
+2026-02-26T11:50:54.232-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource_test.go
+2026-02-26T11:50:54.232-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/resource.tf
+2026-02-26T11:50:54.232-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/import.sh
+2026-02-26T11:50:54.232-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/data-sources/projects_webhook/data-source.tf
+2026-02-26T11:50:54.232-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/ephemeral-resources/projects_webhook/ephemeral-resource.tf
+2026-02-26T11:50:54.232-0500 [INFO]  TERRAFACTOR: Scaffold complete: rendered=47 copied=25 total=72 resources=4 destination=/Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud
+2026-02-26T11:58:28.752-0500 [INFO]  TERRAFACTOR: Provider destroyed: name=testcloud
+2026-02-26T11:58:34.698-0500 [INFO]  TERRAFACTOR: Building provider scaffold: config=examples/provider.hcl
+2026-02-26T11:58:34.699-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:58:34.699-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:58:34.699-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:58:34.699-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:58:34.699-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:58:34.700-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:58:34.700-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:58:34.700-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:58:34.700-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:58:34.700-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:58:34.700-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:58:34.700-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:58:34.701-0500 [INFO]  TERRAFACTOR: Copied file: file=.copywrite.hcl
+2026-02-26T11:58:34.701-0500 [INFO]  TERRAFACTOR: Rendered template: file=.github/CODEOWNERS
+2026-02-26T11:58:34.701-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/CODE_OF_CONDUCT.md
+2026-02-26T11:58:34.702-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/dependabot.yml
+2026-02-26T11:58:34.702-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/pull_request_template.md
+2026-02-26T11:58:34.703-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/issue-comment-triage.yml
+2026-02-26T11:58:34.703-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/lock.yml
+2026-02-26T11:58:34.703-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/release.yml
+2026-02-26T11:58:34.703-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/test.yml
+2026-02-26T11:58:34.703-0500 [INFO]  TERRAFACTOR: Copied file: file=.gitignore
+2026-02-26T11:58:34.703-0500 [INFO]  TERRAFACTOR: Copied file: file=.golangci.yml
+2026-02-26T11:58:34.703-0500 [INFO]  TERRAFACTOR: Copied file: file=.goreleaser.yml
+2026-02-26T11:58:34.704-0500 [INFO]  TERRAFACTOR: Copied file: file=CHANGELOG.md
+2026-02-26T11:58:34.704-0500 [INFO]  TERRAFACTOR: Copied file: file=GNUmakefile
+2026-02-26T11:58:34.704-0500 [INFO]  TERRAFACTOR: Copied file: file=LICENSE
+2026-02-26T11:58:34.704-0500 [INFO]  TERRAFACTOR: Copied file: file=META.d/_summary.yaml
+2026-02-26T11:58:34.705-0500 [INFO]  TERRAFACTOR: Copied file: file=README.md
+2026-02-26T11:58:34.705-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/data-sources/example.md
+2026-02-26T11:58:34.705-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/ephemeral-resources/example.md
+2026-02-26T11:58:34.705-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/index.md
+2026-02-26T11:58:34.705-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/resources/example.md
+2026-02-26T11:58:34.705-0500 [INFO]  TERRAFACTOR: Copied file: file=examples/README.md
+2026-02-26T11:58:34.706-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/provider/provider.tf
+2026-02-26T11:58:34.706-0500 [INFO]  TERRAFACTOR: Rendered template: file=go.mod
+2026-02-26T11:58:34.706-0500 [INFO]  TERRAFACTOR: Copied file: file=go.sum
+2026-02-26T11:58:34.706-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider.go
+2026-02-26T11:58:34.707-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider_test.go
+2026-02-26T11:58:34.707-0500 [INFO]  TERRAFACTOR: Rendered template: file=main.go
+2026-02-26T11:58:34.707-0500 [INFO]  TERRAFACTOR: Rendered template: file=terraform-registry-manifest.json
+2026-02-26T11:58:34.707-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.mod
+2026-02-26T11:58:34.708-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.sum
+2026-02-26T11:58:34.708-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/tools.go
+2026-02-26T11:58:34.708-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource.go
+2026-02-26T11:58:34.708-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource_test.go
+2026-02-26T11:58:34.709-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source.go
+2026-02-26T11:58:34.709-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source_test.go
+2026-02-26T11:58:34.709-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource.go
+2026-02-26T11:58:34.709-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource_test.go
+2026-02-26T11:58:34.709-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/resource.tf
+2026-02-26T11:58:34.709-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/import.sh
+2026-02-26T11:58:34.709-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/data-sources/project/data-source.tf
+2026-02-26T11:58:34.710-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/ephemeral-resources/project/ephemeral-resource.tf
+2026-02-26T11:58:34.710-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource.go
+2026-02-26T11:58:34.710-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource_test.go
+2026-02-26T11:58:34.710-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source.go
+2026-02-26T11:58:34.710-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source_test.go
+2026-02-26T11:58:34.710-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource.go
+2026-02-26T11:58:34.710-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource_test.go
+2026-02-26T11:58:34.710-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/resource.tf
+2026-02-26T11:58:34.710-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/import.sh
+2026-02-26T11:58:34.710-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/data-sources/projects_api_key/data-source.tf
+2026-02-26T11:58:34.711-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/ephemeral-resources/projects_api_key/ephemeral-resource.tf
+2026-02-26T11:58:34.711-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource.go
+2026-02-26T11:58:34.711-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource_test.go
+2026-02-26T11:58:34.711-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source.go
+2026-02-26T11:58:34.711-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source_test.go
+2026-02-26T11:58:34.711-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource.go
+2026-02-26T11:58:34.711-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource_test.go
+2026-02-26T11:58:34.711-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/resource.tf
+2026-02-26T11:58:34.711-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/import.sh
+2026-02-26T11:58:34.711-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/data-sources/projects_member/data-source.tf
+2026-02-26T11:58:34.712-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/ephemeral-resources/projects_member/ephemeral-resource.tf
+2026-02-26T11:58:34.712-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource.go
+2026-02-26T11:58:34.712-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource_test.go
+2026-02-26T11:58:34.712-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source.go
+2026-02-26T11:58:34.712-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source_test.go
+2026-02-26T11:58:34.712-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource.go
+2026-02-26T11:58:34.712-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource_test.go
+2026-02-26T11:58:34.712-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/resource.tf
+2026-02-26T11:58:34.712-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/import.sh
+2026-02-26T11:58:34.712-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/data-sources/projects_webhook/data-source.tf
+2026-02-26T11:58:34.712-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/ephemeral-resources/projects_webhook/ephemeral-resource.tf
+2026-02-26T11:58:34.712-0500 [INFO]  TERRAFACTOR: Scaffold complete: rendered=47 copied=25 total=72 resources=4 destination=/Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud
+2026-02-26T11:58:54.429-0500 [INFO]  TERRAFACTOR: Building provider scaffold: config=examples/provider.hcl
+2026-02-26T11:58:54.429-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:58:54.429-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:58:54.429-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:58:54.429-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:58:54.429-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:58:54.430-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:58:54.430-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:58:54.430-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:58:54.430-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:58:54.430-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:58:54.430-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:58:54.430-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:58:54.430-0500 [INFO]  TERRAFACTOR: provider directory already exists: /Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud
+2026-02-26T11:59:05.367-0500 [INFO]  TERRAFACTOR: Provider destroyed: name=testcloud
+2026-02-26T11:59:13.396-0500 [INFO]  TERRAFACTOR: Building provider scaffold: config=examples/provider.hcl
+2026-02-26T11:59:13.396-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T11:59:13.396-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T11:59:13.396-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T11:59:13.396-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T11:59:13.396-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T11:59:13.397-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T11:59:13.397-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T11:59:13.397-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T11:59:13.397-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T11:59:13.397-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T11:59:13.397-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T11:59:13.397-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T11:59:13.397-0500 [INFO]  TERRAFACTOR: Copied file: file=.copywrite.hcl
+2026-02-26T11:59:13.397-0500 [INFO]  TERRAFACTOR: Rendered template: file=.github/CODEOWNERS
+2026-02-26T11:59:13.397-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/CODE_OF_CONDUCT.md
+2026-02-26T11:59:13.398-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/dependabot.yml
+2026-02-26T11:59:13.398-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/pull_request_template.md
+2026-02-26T11:59:13.398-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/issue-comment-triage.yml
+2026-02-26T11:59:13.398-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/lock.yml
+2026-02-26T11:59:13.398-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/release.yml
+2026-02-26T11:59:13.398-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/test.yml
+2026-02-26T11:59:13.398-0500 [INFO]  TERRAFACTOR: Copied file: file=.gitignore
+2026-02-26T11:59:13.398-0500 [INFO]  TERRAFACTOR: Copied file: file=.golangci.yml
+2026-02-26T11:59:13.398-0500 [INFO]  TERRAFACTOR: Copied file: file=.goreleaser.yml
+2026-02-26T11:59:13.398-0500 [INFO]  TERRAFACTOR: Copied file: file=CHANGELOG.md
+2026-02-26T11:59:13.398-0500 [INFO]  TERRAFACTOR: Copied file: file=GNUmakefile
+2026-02-26T11:59:13.398-0500 [INFO]  TERRAFACTOR: Copied file: file=LICENSE
+2026-02-26T11:59:13.399-0500 [INFO]  TERRAFACTOR: Copied file: file=META.d/_summary.yaml
+2026-02-26T11:59:13.399-0500 [INFO]  TERRAFACTOR: Copied file: file=README.md
+2026-02-26T11:59:13.399-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/data-sources/example.md
+2026-02-26T11:59:13.399-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/ephemeral-resources/example.md
+2026-02-26T11:59:13.399-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/index.md
+2026-02-26T11:59:13.399-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/resources/example.md
+2026-02-26T11:59:13.399-0500 [INFO]  TERRAFACTOR: Copied file: file=examples/README.md
+2026-02-26T11:59:13.399-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/provider/provider.tf
+2026-02-26T11:59:13.400-0500 [INFO]  TERRAFACTOR: Rendered template: file=go.mod
+2026-02-26T11:59:13.400-0500 [INFO]  TERRAFACTOR: Copied file: file=go.sum
+2026-02-26T11:59:13.400-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider.go
+2026-02-26T11:59:13.400-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider_test.go
+2026-02-26T11:59:13.400-0500 [INFO]  TERRAFACTOR: Rendered template: file=main.go
+2026-02-26T11:59:13.400-0500 [INFO]  TERRAFACTOR: Rendered template: file=terraform-registry-manifest.json
+2026-02-26T11:59:13.400-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.mod
+2026-02-26T11:59:13.401-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.sum
+2026-02-26T11:59:13.401-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/tools.go
+2026-02-26T11:59:13.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource.go
+2026-02-26T11:59:13.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource_test.go
+2026-02-26T11:59:13.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source.go
+2026-02-26T11:59:13.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source_test.go
+2026-02-26T11:59:13.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource.go
+2026-02-26T11:59:13.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource_test.go
+2026-02-26T11:59:13.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/resource.tf
+2026-02-26T11:59:13.401-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/import.sh
+2026-02-26T11:59:13.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/data-sources/project/data-source.tf
+2026-02-26T11:59:13.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/ephemeral-resources/project/ephemeral-resource.tf
+2026-02-26T11:59:13.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource.go
+2026-02-26T11:59:13.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource_test.go
+2026-02-26T11:59:13.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source.go
+2026-02-26T11:59:13.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source_test.go
+2026-02-26T11:59:13.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource.go
+2026-02-26T11:59:13.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource_test.go
+2026-02-26T11:59:13.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/resource.tf
+2026-02-26T11:59:13.402-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/import.sh
+2026-02-26T11:59:13.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/data-sources/projects_api_key/data-source.tf
+2026-02-26T11:59:13.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/ephemeral-resources/projects_api_key/ephemeral-resource.tf
+2026-02-26T11:59:13.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource.go
+2026-02-26T11:59:13.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource_test.go
+2026-02-26T11:59:13.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source.go
+2026-02-26T11:59:13.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source_test.go
+2026-02-26T11:59:13.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource.go
+2026-02-26T11:59:13.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource_test.go
+2026-02-26T11:59:13.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/resource.tf
+2026-02-26T11:59:13.403-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/import.sh
+2026-02-26T11:59:13.404-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/data-sources/projects_member/data-source.tf
+2026-02-26T11:59:13.404-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/ephemeral-resources/projects_member/ephemeral-resource.tf
+2026-02-26T11:59:13.404-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource.go
+2026-02-26T11:59:13.404-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource_test.go
+2026-02-26T11:59:13.404-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source.go
+2026-02-26T11:59:13.404-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source_test.go
+2026-02-26T11:59:13.404-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource.go
+2026-02-26T11:59:13.404-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource_test.go
+2026-02-26T11:59:13.404-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/resource.tf
+2026-02-26T11:59:13.404-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/import.sh
+2026-02-26T11:59:13.404-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/data-sources/projects_webhook/data-source.tf
+2026-02-26T11:59:13.405-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/ephemeral-resources/projects_webhook/ephemeral-resource.tf
+2026-02-26T11:59:13.405-0500 [INFO]  TERRAFACTOR: Scaffold complete: rendered=47 copied=25 total=72 resources=4 destination=/Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud
+2026-02-26T12:22:22.293-0500 [INFO]  TERRAFACTOR: Provider destroyed: name=testcloud
+2026-02-26T12:22:28.126-0500 [INFO]  TERRAFACTOR: Building provider scaffold: config=examples/provider.hcl
+2026-02-26T12:22:28.126-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T12:22:28.126-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T12:22:28.126-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T12:22:28.126-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T12:22:28.126-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T12:22:28.128-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T12:22:28.128-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T12:22:28.128-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T12:22:28.128-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T12:22:28.128-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T12:22:28.128-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T12:22:28.128-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T12:22:35.656-0500 [INFO]  TERRAFACTOR: Copied file: file=.copywrite.hcl
+2026-02-26T12:22:35.657-0500 [INFO]  TERRAFACTOR: Rendered template: file=.github/CODEOWNERS
+2026-02-26T12:22:35.658-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/CODE_OF_CONDUCT.md
+2026-02-26T12:22:35.658-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/dependabot.yml
+2026-02-26T12:22:35.659-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/pull_request_template.md
+2026-02-26T12:22:35.659-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/issue-comment-triage.yml
+2026-02-26T12:22:35.659-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/lock.yml
+2026-02-26T12:22:35.660-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/release.yml
+2026-02-26T12:22:35.660-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/test.yml
+2026-02-26T12:22:35.660-0500 [INFO]  TERRAFACTOR: Copied file: file=.gitignore
+2026-02-26T12:22:35.661-0500 [INFO]  TERRAFACTOR: Copied file: file=.golangci.yml
+2026-02-26T12:22:35.661-0500 [INFO]  TERRAFACTOR: Copied file: file=.goreleaser.yml
+2026-02-26T12:22:35.661-0500 [INFO]  TERRAFACTOR: Copied file: file=CHANGELOG.md
+2026-02-26T12:22:35.661-0500 [INFO]  TERRAFACTOR: Copied file: file=GNUmakefile
+2026-02-26T12:22:35.662-0500 [INFO]  TERRAFACTOR: Copied file: file=LICENSE
+2026-02-26T12:22:35.662-0500 [INFO]  TERRAFACTOR: Copied file: file=META.d/_summary.yaml
+2026-02-26T12:22:35.663-0500 [INFO]  TERRAFACTOR: Copied file: file=README.md
+2026-02-26T12:22:35.663-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/data-sources/example.md
+2026-02-26T12:22:35.664-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/ephemeral-resources/example.md
+2026-02-26T12:22:35.664-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/index.md
+2026-02-26T12:22:35.664-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/resources/example.md
+2026-02-26T12:22:35.665-0500 [INFO]  TERRAFACTOR: Copied file: file=examples/README.md
+2026-02-26T12:22:35.665-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/provider/provider.tf
+2026-02-26T12:22:35.666-0500 [INFO]  TERRAFACTOR: Rendered template: file=go.mod
+2026-02-26T12:22:35.666-0500 [INFO]  TERRAFACTOR: Copied file: file=go.sum
+2026-02-26T12:22:35.667-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider.go
+2026-02-26T12:22:35.668-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider_test.go
+2026-02-26T12:22:35.668-0500 [INFO]  TERRAFACTOR: Rendered template: file=main.go
+2026-02-26T12:22:35.669-0500 [INFO]  TERRAFACTOR: Rendered template: file=terraform-registry-manifest.json
+2026-02-26T12:22:35.669-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.mod
+2026-02-26T12:22:35.670-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.sum
+2026-02-26T12:22:35.670-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/tools.go
+2026-02-26T12:22:35.671-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource.go
+2026-02-26T12:22:35.671-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource_test.go
+2026-02-26T12:22:35.672-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source.go
+2026-02-26T12:22:35.672-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source_test.go
+2026-02-26T12:22:35.672-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource.go
+2026-02-26T12:22:35.673-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource_test.go
+2026-02-26T12:22:35.673-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/resource.tf
+2026-02-26T12:22:35.673-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/import.sh
+2026-02-26T12:22:35.674-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/data-sources/project/data-source.tf
+2026-02-26T12:22:35.674-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/ephemeral-resources/project/ephemeral-resource.tf
+2026-02-26T12:22:35.674-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource.go
+2026-02-26T12:22:35.674-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource_test.go
+2026-02-26T12:22:35.674-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source.go
+2026-02-26T12:22:35.675-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source_test.go
+2026-02-26T12:22:35.675-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource.go
+2026-02-26T12:22:35.675-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource_test.go
+2026-02-26T12:22:35.675-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/resource.tf
+2026-02-26T12:22:35.675-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/import.sh
+2026-02-26T12:22:35.676-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/data-sources/projects_api_key/data-source.tf
+2026-02-26T12:22:35.676-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/ephemeral-resources/projects_api_key/ephemeral-resource.tf
+2026-02-26T12:22:35.676-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource.go
+2026-02-26T12:22:35.676-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource_test.go
+2026-02-26T12:22:35.677-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source.go
+2026-02-26T12:22:35.677-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source_test.go
+2026-02-26T12:22:35.677-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource.go
+2026-02-26T12:22:35.677-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource_test.go
+2026-02-26T12:22:35.677-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/resource.tf
+2026-02-26T12:22:35.677-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/import.sh
+2026-02-26T12:22:35.678-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/data-sources/projects_member/data-source.tf
+2026-02-26T12:22:35.678-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/ephemeral-resources/projects_member/ephemeral-resource.tf
+2026-02-26T12:22:35.678-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource.go
+2026-02-26T12:22:35.678-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource_test.go
+2026-02-26T12:22:35.678-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source.go
+2026-02-26T12:22:35.678-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source_test.go
+2026-02-26T12:22:35.679-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource.go
+2026-02-26T12:22:35.679-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource_test.go
+2026-02-26T12:22:35.679-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/resource.tf
+2026-02-26T12:22:35.679-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/import.sh
+2026-02-26T12:22:35.679-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/data-sources/projects_webhook/data-source.tf
+2026-02-26T12:22:35.679-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/ephemeral-resources/projects_webhook/ephemeral-resource.tf
+2026-02-26T12:22:35.679-0500 [INFO]  TERRAFACTOR: Scaffold complete: rendered=47 copied=25 total=72 resources=4 destination=/Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud
+2026-02-26T12:43:05.438-0500 [INFO]  TERRAFACTOR: Provider destroyed: name=testcloud
+2026-02-26T12:43:09.203-0500 [INFO]  TERRAFACTOR: Building provider scaffold: config=examples/provider.hcl
+2026-02-26T12:43:09.204-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T12:43:09.204-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T12:43:09.204-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T12:43:09.204-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T12:43:09.204-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T12:43:09.206-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T12:43:09.206-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T12:43:09.206-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_api_key fields=9
+2026-02-26T12:43:09.206-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T12:43:09.206-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T12:43:09.206-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T12:43:09.206-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T12:43:12.262-0500 [INFO]  TERRAFACTOR: Copied file: file=.copywrite.hcl
+2026-02-26T12:43:12.263-0500 [INFO]  TERRAFACTOR: Rendered template: file=.github/CODEOWNERS
+2026-02-26T12:43:12.263-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/CODE_OF_CONDUCT.md
+2026-02-26T12:43:12.264-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/dependabot.yml
+2026-02-26T12:43:12.264-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/pull_request_template.md
+2026-02-26T12:43:12.265-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/issue-comment-triage.yml
+2026-02-26T12:43:12.265-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/lock.yml
+2026-02-26T12:43:12.265-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/release.yml
+2026-02-26T12:43:12.265-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/test.yml
+2026-02-26T12:43:12.266-0500 [INFO]  TERRAFACTOR: Copied file: file=.gitignore
+2026-02-26T12:43:12.266-0500 [INFO]  TERRAFACTOR: Copied file: file=.golangci.yml
+2026-02-26T12:43:12.266-0500 [INFO]  TERRAFACTOR: Copied file: file=.goreleaser.yml
+2026-02-26T12:43:12.266-0500 [INFO]  TERRAFACTOR: Copied file: file=CHANGELOG.md
+2026-02-26T12:43:12.267-0500 [INFO]  TERRAFACTOR: Copied file: file=GNUmakefile
+2026-02-26T12:43:12.267-0500 [INFO]  TERRAFACTOR: Copied file: file=LICENSE
+2026-02-26T12:43:12.267-0500 [INFO]  TERRAFACTOR: Copied file: file=META.d/_summary.yaml
+2026-02-26T12:43:12.267-0500 [INFO]  TERRAFACTOR: Copied file: file=README.md
+2026-02-26T12:43:12.268-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/data-sources/example.md
+2026-02-26T12:43:12.268-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/ephemeral-resources/example.md
+2026-02-26T12:43:12.269-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/index.md
+2026-02-26T12:43:12.269-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/resources/example.md
+2026-02-26T12:43:12.270-0500 [INFO]  TERRAFACTOR: Copied file: file=examples/README.md
+2026-02-26T12:43:12.270-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/provider/provider.tf
+2026-02-26T12:43:12.271-0500 [INFO]  TERRAFACTOR: Rendered template: file=go.mod
+2026-02-26T12:43:12.271-0500 [INFO]  TERRAFACTOR: Copied file: file=go.sum
+2026-02-26T12:43:12.272-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider.go
+2026-02-26T12:43:12.273-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider_test.go
+2026-02-26T12:43:12.273-0500 [INFO]  TERRAFACTOR: Rendered template: file=main.go
+2026-02-26T12:43:12.274-0500 [INFO]  TERRAFACTOR: Rendered template: file=terraform-registry-manifest.json
+2026-02-26T12:43:12.274-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.mod
+2026-02-26T12:43:12.275-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.sum
+2026-02-26T12:43:12.275-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/tools.go
+2026-02-26T12:43:12.276-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource.go
+2026-02-26T12:43:12.277-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource_test.go
+2026-02-26T12:43:12.278-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source.go
+2026-02-26T12:43:12.278-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source_test.go
+2026-02-26T12:43:12.279-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource.go
+2026-02-26T12:43:12.279-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource_test.go
+2026-02-26T12:43:12.279-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/resource.tf
+2026-02-26T12:43:12.280-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/import.sh
+2026-02-26T12:43:12.280-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/data-sources/project/data-source.tf
+2026-02-26T12:43:12.280-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/ephemeral-resources/project/ephemeral-resource.tf
+2026-02-26T12:43:12.281-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource.go
+2026-02-26T12:43:12.281-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_resource_test.go
+2026-02-26T12:43:12.281-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source.go
+2026-02-26T12:43:12.281-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_data_source_test.go
+2026-02-26T12:43:12.282-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource.go
+2026-02-26T12:43:12.282-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=internal/provider/projects_api_key_ephemeral_resource_test.go
+2026-02-26T12:43:12.282-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/resource.tf
+2026-02-26T12:43:12.282-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/resources/projects_api_key/import.sh
+2026-02-26T12:43:12.282-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/data-sources/projects_api_key/data-source.tf
+2026-02-26T12:43:12.283-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_api_key file=examples/ephemeral-resources/projects_api_key/ephemeral-resource.tf
+2026-02-26T12:43:12.283-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource.go
+2026-02-26T12:43:12.283-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource_test.go
+2026-02-26T12:43:12.283-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source.go
+2026-02-26T12:43:12.284-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source_test.go
+2026-02-26T12:43:12.284-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource.go
+2026-02-26T12:43:12.284-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource_test.go
+2026-02-26T12:43:12.284-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/resource.tf
+2026-02-26T12:43:12.284-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/import.sh
+2026-02-26T12:43:12.285-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/data-sources/projects_member/data-source.tf
+2026-02-26T12:43:12.285-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/ephemeral-resources/projects_member/ephemeral-resource.tf
+2026-02-26T12:43:12.285-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource.go
+2026-02-26T12:43:12.285-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource_test.go
+2026-02-26T12:43:12.285-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source.go
+2026-02-26T12:43:12.286-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source_test.go
+2026-02-26T12:43:12.286-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource.go
+2026-02-26T12:43:12.286-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource_test.go
+2026-02-26T12:43:12.286-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/resource.tf
+2026-02-26T12:43:12.286-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/import.sh
+2026-02-26T12:43:12.287-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/data-sources/projects_webhook/data-source.tf
+2026-02-26T12:43:12.287-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/ephemeral-resources/projects_webhook/ephemeral-resource.tf
+2026-02-26T12:43:12.287-0500 [INFO]  TERRAFACTOR: Scaffold complete: rendered=47 copied=25 total=72 resources=4 destination=/Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud
+2026-02-26T12:44:39.218-0500 [INFO]  TERRAFACTOR: Applying provider update: config=examples/provider.hcl
+2026-02-26T12:44:39.219-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T12:44:39.219-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T12:44:39.219-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T12:44:39.219-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T12:44:39.219-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T12:44:39.220-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T12:44:39.220-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T12:44:39.220-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_environment fields=8
+2026-02-26T12:44:39.220-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T12:44:39.220-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T12:44:39.220-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T12:44:39.220-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T13:04:17.732-0500 [INFO]  TERRAFACTOR: Planning provider update: config=examples/provider.hcl
+2026-02-26T13:04:17.733-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T13:04:17.733-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T13:04:17.733-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T13:04:17.733-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T13:04:17.733-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T13:04:17.734-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T13:04:17.734-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T13:04:17.734-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_environment fields=8
+2026-02-26T13:04:17.734-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T13:04:17.734-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T13:04:17.734-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T13:04:17.734-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T13:20:33.734-0500 [INFO]  TERRAFACTOR: Provider destroyed: name=testcloud
+2026-02-26T13:32:55.939-0500 [INFO]  TERRAFACTOR: provider "testcloud" not found in store
+2026-02-26T13:33:03.289-0500 [INFO]  TERRAFACTOR: Building provider scaffold: config=examples/provider.hcl
+2026-02-26T13:33:03.290-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T13:33:03.290-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T13:33:03.290-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T13:33:03.290-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T13:33:03.290-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T13:33:03.292-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T13:33:03.292-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T13:33:03.292-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_environment fields=8
+2026-02-26T13:33:03.292-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T13:33:03.292-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T13:33:03.292-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T13:33:03.292-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T13:33:12.335-0500 [INFO]  TERRAFACTOR: Building provider scaffold: config=examples/provider.hcl
+2026-02-26T13:33:12.335-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T13:33:12.335-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T13:33:12.335-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T13:33:12.335-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T13:33:12.335-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T13:33:12.336-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=4
+2026-02-26T13:33:12.336-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=10
+2026-02-26T13:33:12.336-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_environment fields=8
+2026-02-26T13:33:12.336-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=7
+2026-02-26T13:33:12.336-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T13:33:12.336-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T13:33:12.336-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
+2026-02-26T13:33:13.339-0500 [INFO]  TERRAFACTOR: Copied file: file=.copywrite.hcl
+2026-02-26T13:33:13.340-0500 [INFO]  TERRAFACTOR: Rendered template: file=.github/CODEOWNERS
+2026-02-26T13:33:13.340-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/CODE_OF_CONDUCT.md
+2026-02-26T13:33:13.340-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/dependabot.yml
+2026-02-26T13:33:13.341-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/pull_request_template.md
+2026-02-26T13:33:13.342-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/issue-comment-triage.yml
+2026-02-26T13:33:13.342-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/lock.yml
+2026-02-26T13:33:13.342-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/release.yml
+2026-02-26T13:33:13.343-0500 [INFO]  TERRAFACTOR: Copied file: file=.github/workflows/test.yml
+2026-02-26T13:33:13.343-0500 [INFO]  TERRAFACTOR: Copied file: file=.gitignore
+2026-02-26T13:33:13.344-0500 [INFO]  TERRAFACTOR: Copied file: file=.golangci.yml
+2026-02-26T13:33:13.344-0500 [INFO]  TERRAFACTOR: Copied file: file=.goreleaser.yml
+2026-02-26T13:33:13.344-0500 [INFO]  TERRAFACTOR: Copied file: file=CHANGELOG.md
+2026-02-26T13:33:13.345-0500 [INFO]  TERRAFACTOR: Copied file: file=GNUmakefile
+2026-02-26T13:33:13.345-0500 [INFO]  TERRAFACTOR: Copied file: file=LICENSE
+2026-02-26T13:33:13.346-0500 [INFO]  TERRAFACTOR: Copied file: file=META.d/_summary.yaml
+2026-02-26T13:33:13.346-0500 [INFO]  TERRAFACTOR: Copied file: file=README.md
+2026-02-26T13:33:13.347-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/data-sources/example.md
+2026-02-26T13:33:13.347-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/ephemeral-resources/example.md
+2026-02-26T13:33:13.348-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/index.md
+2026-02-26T13:33:13.348-0500 [INFO]  TERRAFACTOR: Copied file: file=docs/resources/example.md
+2026-02-26T13:33:13.349-0500 [INFO]  TERRAFACTOR: Copied file: file=examples/README.md
+2026-02-26T13:33:13.349-0500 [INFO]  TERRAFACTOR: Rendered template: file=examples/provider/provider.tf
+2026-02-26T13:33:13.350-0500 [INFO]  TERRAFACTOR: Rendered template: file=go.mod
+2026-02-26T13:33:13.351-0500 [INFO]  TERRAFACTOR: Copied file: file=go.sum
+2026-02-26T13:33:13.352-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider.go
+2026-02-26T13:33:13.353-0500 [INFO]  TERRAFACTOR: Rendered template: file=internal/provider/provider_test.go
+2026-02-26T13:33:13.354-0500 [INFO]  TERRAFACTOR: Rendered template: file=main.go
+2026-02-26T13:33:13.354-0500 [INFO]  TERRAFACTOR: Rendered template: file=terraform-registry-manifest.json
+2026-02-26T13:33:13.355-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.mod
+2026-02-26T13:33:13.355-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/go.sum
+2026-02-26T13:33:13.356-0500 [INFO]  TERRAFACTOR: Copied file: file=tools/tools.go
+2026-02-26T13:33:13.356-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource.go
+2026-02-26T13:33:13.357-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_resource_test.go
+2026-02-26T13:33:13.357-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source.go
+2026-02-26T13:33:13.357-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_data_source_test.go
+2026-02-26T13:33:13.358-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource.go
+2026-02-26T13:33:13.358-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=internal/provider/project_ephemeral_resource_test.go
+2026-02-26T13:33:13.359-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/resource.tf
+2026-02-26T13:33:13.359-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/resources/project/import.sh
+2026-02-26T13:33:13.359-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/data-sources/project/data-source.tf
+2026-02-26T13:33:13.359-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=project file=examples/ephemeral-resources/project/ephemeral-resource.tf
+2026-02-26T13:33:13.360-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_environment file=internal/provider/projects_environment_resource.go
+2026-02-26T13:33:13.360-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_environment file=internal/provider/projects_environment_resource_test.go
+2026-02-26T13:33:13.360-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_environment file=internal/provider/projects_environment_data_source.go
+2026-02-26T13:33:13.360-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_environment file=internal/provider/projects_environment_data_source_test.go
+2026-02-26T13:33:13.360-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_environment file=internal/provider/projects_environment_ephemeral_resource.go
+2026-02-26T13:33:13.361-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_environment file=internal/provider/projects_environment_ephemeral_resource_test.go
+2026-02-26T13:33:13.361-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_environment file=examples/resources/projects_environment/resource.tf
+2026-02-26T13:33:13.361-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_environment file=examples/resources/projects_environment/import.sh
+2026-02-26T13:33:13.361-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_environment file=examples/data-sources/projects_environment/data-source.tf
+2026-02-26T13:33:13.361-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_environment file=examples/ephemeral-resources/projects_environment/ephemeral-resource.tf
+2026-02-26T13:33:13.362-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource.go
+2026-02-26T13:33:13.362-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_resource_test.go
+2026-02-26T13:33:13.362-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source.go
+2026-02-26T13:33:13.363-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_data_source_test.go
+2026-02-26T13:33:13.363-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource.go
+2026-02-26T13:33:13.363-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=internal/provider/projects_member_ephemeral_resource_test.go
+2026-02-26T13:33:13.363-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/resource.tf
+2026-02-26T13:33:13.363-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/resources/projects_member/import.sh
+2026-02-26T13:33:13.364-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/data-sources/projects_member/data-source.tf
+2026-02-26T13:33:13.364-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_member file=examples/ephemeral-resources/projects_member/ephemeral-resource.tf
+2026-02-26T13:33:13.364-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource.go
+2026-02-26T13:33:13.364-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_resource_test.go
+2026-02-26T13:33:13.365-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source.go
+2026-02-26T13:33:13.365-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_data_source_test.go
+2026-02-26T13:33:13.365-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource.go
+2026-02-26T13:33:13.365-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=internal/provider/projects_webhook_ephemeral_resource_test.go
+2026-02-26T13:33:13.365-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/resource.tf
+2026-02-26T13:33:13.365-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/resources/projects_webhook/import.sh
+2026-02-26T13:33:13.366-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/data-sources/projects_webhook/data-source.tf
+2026-02-26T13:33:13.366-0500 [INFO]  TERRAFACTOR: Rendered resource file: resource=projects_webhook file=examples/ephemeral-resources/projects_webhook/ephemeral-resource.tf
+2026-02-26T13:33:13.366-0500 [INFO]  TERRAFACTOR: Scaffold complete: rendered=47 copied=25 total=72 resources=4 destination=/Users/devops/dev/cloudputation/repos/applications/terrafactor/engine/store/testcloud
+2026-02-26T13:35:54.535-0500 [INFO]  TERRAFACTOR: Provider destroyed: name=testcloud
+2026-02-26T13:37:48.713-0500 [INFO]  TERRAFACTOR: Planning provider update: config=examples/provider.hcl
+2026-02-26T13:37:48.714-0500 [INFO]  TERRAFACTOR: Loaded provider manifest: path=examples/provider.hcl
+2026-02-26T13:37:48.714-0500 [INFO]  TERRAFACTOR: Provider config: name=testcloud org=cloudputation registry=registry.terraform.io go_module_prefix=github.com
+2026-02-26T13:37:48.714-0500 [INFO]  TERRAFACTOR: Schema: spec=examples/api.yaml
+2026-02-26T13:37:48.714-0500 [INFO]  TERRAFACTOR: Release: version=0.1.0 license=MPL-2.0
+2026-02-26T13:37:48.714-0500 [INFO]  TERRAFACTOR: Author: name="Cloudputation, Inc." email=engineering@cloudputation.io github=cloudputation
+2026-02-26T13:37:48.715-0500 [INFO]  TERRAFACTOR: OpenAPI parsed: spec=examples/api.yaml resources=5
+2026-02-26T13:37:48.715-0500 [INFO]  TERRAFACTOR: Resource found: name=project fields=11
+2026-02-26T13:37:48.715-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_deployment fields=7
+2026-02-26T13:37:48.715-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_environment fields=8
+2026-02-26T13:37:48.715-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_member fields=5
+2026-02-26T13:37:48.715-0500 [INFO]  TERRAFACTOR: Resource found: name=projects_webhook fields=10
+2026-02-26T13:37:48.715-0500 [INFO]  TERRAFACTOR: Derived values: go_module=github.com/cloudputation/terraform-provider-testcloud registry_address=registry.terraform.io/cloudputation/testcloud
+2026-02-26T13:37:48.715-0500 [INFO]  TERRAFACTOR: Rendering as: provider=testcloud provider_pascal=Testcloud copyright_holder="Cloudputation, Inc." license=MPL-2.0
