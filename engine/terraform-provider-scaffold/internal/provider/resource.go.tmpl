@@ -4,9 +4,13 @@
 package provider
 
 import (
+	"bytes"
 	"context"
+	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
+	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
@@ -27,13 +31,89 @@ func New{{.ResourceNamePascal}}Resource() resource.Resource {
 
 // {{.ResourceNamePascal}}Resource defines the resource implementation.
 type {{.ResourceNamePascal}}Resource struct {
-	client *http.Client
+	client *APIClient
 }
 
 // {{.ResourceNamePascal}}ResourceModel describes the resource data model.
 type {{.ResourceNamePascal}}ResourceModel struct {
 {{- range .Fields}}
 	{{.GoName}} {{.GoType}} `tfsdk:"{{.Name}}"`
+{{- end}}
+}
+
+// {{.ResourceNamePascal}}APIModel is the JSON-serializable representation for API calls.
+type {{.ResourceNamePascal}}APIModel struct {
+{{- range .Fields}}
+{{- if eq .GoType "types.String"}}
+	{{.GoName}} string `json:"{{.Name}},omitempty"`
+{{- else if eq .GoType "types.Int64"}}
+	{{.GoName}} *int64 `json:"{{.Name}},omitempty"`
+{{- else if eq .GoType "types.Bool"}}
+	{{.GoName}} *bool `json:"{{.Name}},omitempty"`
+{{- else if eq .GoType "types.Float64"}}
+	{{.GoName}} *float64 `json:"{{.Name}},omitempty"`
+{{- else if eq .GoType "types.List"}}
+	{{.GoName}} []string `json:"{{.Name}},omitempty"`
+{{- else if eq .GoType "types.Map"}}
+	{{.GoName}} map[string]string `json:"{{.Name}},omitempty"`
+{{- else}}
+	{{.GoName}} map[string]interface{} `json:"{{.Name}},omitempty"`
+{{- end}}
+{{- end}}
+}
+
+// {{.ResourceNamePascal}}APIEnvelope is the response envelope from the API.
+type {{.ResourceNamePascal}}APIEnvelope struct {
+	Success bool                           `json:"success"`
+	Data    {{.ResourceNamePascal}}APIModel `json:"data"`
+	Error   struct {
+		Code    string `json:"code"`
+		Message string `json:"message"`
+	} `json:"error"`
+}
+
+func (r *{{.ResourceNamePascal}}Resource) toAPIModel(data *{{.ResourceNamePascal}}ResourceModel) {{.ResourceNamePascal}}APIModel {
+	m := {{.ResourceNamePascal}}APIModel{}
+{{- range .Fields}}
+{{- if eq .GoType "types.String"}}
+	m.{{.GoName}} = data.{{.GoName}}.ValueString()
+{{- else if eq .GoType "types.Int64"}}
+	if !data.{{.GoName}}.IsNull() && !data.{{.GoName}}.IsUnknown() {
+		v := data.{{.GoName}}.ValueInt64()
+		m.{{.GoName}} = &v
+	}
+{{- else if eq .GoType "types.Bool"}}
+	if !data.{{.GoName}}.IsNull() && !data.{{.GoName}}.IsUnknown() {
+		v := data.{{.GoName}}.ValueBool()
+		m.{{.GoName}} = &v
+	}
+{{- else if eq .GoType "types.Float64"}}
+	if !data.{{.GoName}}.IsNull() && !data.{{.GoName}}.IsUnknown() {
+		v := data.{{.GoName}}.ValueFloat64()
+		m.{{.GoName}} = &v
+	}
+{{- end}}
+{{- end}}
+	return m
+}
+
+func (r *{{.ResourceNamePascal}}Resource) fromAPIModel(m *{{.ResourceNamePascal}}APIModel, data *{{.ResourceNamePascal}}ResourceModel) {
+{{- range .Fields}}
+{{- if eq .GoType "types.String"}}
+	data.{{.GoName}} = types.StringValue(m.{{.GoName}})
+{{- else if eq .GoType "types.Int64"}}
+	if m.{{.GoName}} != nil {
+		data.{{.GoName}} = types.Int64Value(*m.{{.GoName}})
+	}
+{{- else if eq .GoType "types.Bool"}}
+	if m.{{.GoName}} != nil {
+		data.{{.GoName}} = types.BoolValue(*m.{{.GoName}})
+	}
+{{- else if eq .GoType "types.Float64"}}
+	if m.{{.GoName}} != nil {
+		data.{{.GoName}} = types.Float64Value(*m.{{.GoName}})
+	}
+{{- end}}
 {{- end}}
 }
 
@@ -56,11 +136,11 @@ func (r *{{.ResourceNamePascal}}Resource) Configure(ctx context.Context, req res
 		return
 	}
 
-	client, ok := req.ProviderData.(*http.Client)
+	client, ok := req.ProviderData.(*APIClient)
 	if !ok {
 		resp.Diagnostics.AddError(
 			"Unexpected Resource Configure Type",
-			fmt.Sprintf("Expected *http.Client, got: %T. Please report this issue to the provider developers.", req.ProviderData),
+			fmt.Sprintf("Expected *APIClient, got: %T. Please report this issue to the provider developers.", req.ProviderData),
 		)
 		return
 	}
@@ -76,15 +156,60 @@ func (r *{{.ResourceNamePascal}}Resource) Create(ctx context.Context, req resour
 		return
 	}
 
-	// TODO: implement API call
-	// httpResp, err := r.client.Do(httpReq)
-	// if err != nil {
-	//     resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to create {{.ResourceName}}, got error: %s", err))
-	//     return
-	// }
+{{- if .Create}}
+	apiModel := r.toAPIModel(&data)
+	body, err := json.Marshal(apiModel)
+	if err != nil {
+		resp.Diagnostics.AddError("Serialization Error", fmt.Sprintf("Unable to serialize {{.ResourceName}}: %s", err))
+		return
+	}
 
-	// TODO: replace with ID from API response
-	data.Id = types.StringValue("placeholder-id")
+	url := r.client.Endpoint + "{{.Create.Path}}"
+	httpReq, err := http.NewRequestWithContext(ctx, "{{.Create.Method}}", url, bytes.NewReader(body))
+	if err != nil {
+		resp.Diagnostics.AddError("Request Error", fmt.Sprintf("Unable to create request for {{.ResourceName}}: %s", err))
+		return
+	}
+	httpReq.Header.Set("Content-Type", "application/json")
+
+	httpResp, err := r.client.HTTPClient.Do(httpReq)
+	if err != nil {
+		resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to create {{.ResourceName}}: %s", err))
+		return
+	}
+	defer httpResp.Body.Close()
+
+	respBody, err := io.ReadAll(httpResp.Body)
+	if err != nil {
+		resp.Diagnostics.AddError("Read Error", fmt.Sprintf("Unable to read response for {{.ResourceName}}: %s", err))
+		return
+	}
+
+	var envelope {{.ResourceNamePascal}}APIEnvelope
+	if err := json.Unmarshal(respBody, &envelope); err != nil {
+		resp.Diagnostics.AddError("Parse Error", fmt.Sprintf("Unable to parse response for {{.ResourceName}}: %s", err))
+		return
+	}
+
+	if !envelope.Success {
+		resp.Diagnostics.AddError(envelope.Error.Code, envelope.Error.Message)
+		return
+	}
+
+	r.fromAPIModel(&envelope.Data, &data)
+
+{{- if .PathParam}}
+{{- if eq .PathParam "id"}}
+	// ID comes from the response data
+{{- else}}
+	// PathParam is "{{.PathParam}}", use it as the Terraform ID
+	data.Id = data.{{.PathParamGo}}
+{{- end}}
+{{- end}}
+{{- else}}
+	resp.Diagnostics.AddError("Not Implemented", "Create is not available for {{.ResourceName}}")
+	return
+{{- end}}
 
 	tflog.Trace(ctx, "created {{.ResourceName}} resource")
 	resp.Diagnostics.Append(resp.State.Set(ctx, &data)...)
@@ -98,12 +223,52 @@ func (r *{{.ResourceNamePascal}}Resource) Read(ctx context.Context, req resource
 		return
 	}
 
-	// TODO: implement API call
-	// httpResp, err := r.client.Do(httpReq)
-	// if err != nil {
-	//     resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to read {{.ResourceName}}, got error: %s", err))
-	//     return
-	// }
+{{- if .Read}}
+	url := r.client.Endpoint + "{{.Read.Path}}"
+{{- if .PathParam}}
+	url = strings.Replace(url, "{{"{"}}{{.PathParam}}{{"}"}}", data.{{.PathParamGo}}.ValueString(), 1)
+{{- end}}
+
+	httpReq, err := http.NewRequestWithContext(ctx, "{{.Read.Method}}", url, nil)
+	if err != nil {
+		resp.Diagnostics.AddError("Request Error", fmt.Sprintf("Unable to create request for {{.ResourceName}}: %s", err))
+		return
+	}
+
+	httpResp, err := r.client.HTTPClient.Do(httpReq)
+	if err != nil {
+		resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to read {{.ResourceName}}: %s", err))
+		return
+	}
+	defer httpResp.Body.Close()
+
+	if httpResp.StatusCode == http.StatusNotFound {
+		resp.State.RemoveResource(ctx)
+		return
+	}
+
+	respBody, err := io.ReadAll(httpResp.Body)
+	if err != nil {
+		resp.Diagnostics.AddError("Read Error", fmt.Sprintf("Unable to read response for {{.ResourceName}}: %s", err))
+		return
+	}
+
+	var envelope {{.ResourceNamePascal}}APIEnvelope
+	if err := json.Unmarshal(respBody, &envelope); err != nil {
+		resp.Diagnostics.AddError("Parse Error", fmt.Sprintf("Unable to parse response for {{.ResourceName}}: %s", err))
+		return
+	}
+
+	if !envelope.Success {
+		resp.Diagnostics.AddError(envelope.Error.Code, envelope.Error.Message)
+		return
+	}
+
+	r.fromAPIModel(&envelope.Data, &data)
+{{- else}}
+	resp.Diagnostics.AddError("Not Implemented", "Read is not available for {{.ResourceName}}")
+	return
+{{- end}}
 
 	resp.Diagnostics.Append(resp.State.Set(ctx, &data)...)
 }
@@ -116,12 +281,55 @@ func (r *{{.ResourceNamePascal}}Resource) Update(ctx context.Context, req resour
 		return
 	}
 
-	// TODO: implement API call
-	// httpResp, err := r.client.Do(httpReq)
-	// if err != nil {
-	//     resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to update {{.ResourceName}}, got error: %s", err))
-	//     return
-	// }
+{{- if .Update}}
+	apiModel := r.toAPIModel(&data)
+	body, err := json.Marshal(apiModel)
+	if err != nil {
+		resp.Diagnostics.AddError("Serialization Error", fmt.Sprintf("Unable to serialize {{.ResourceName}}: %s", err))
+		return
+	}
+
+	url := r.client.Endpoint + "{{.Update.Path}}"
+{{- if .PathParam}}
+	url = strings.Replace(url, "{{"{"}}{{.PathParam}}{{"}"}}", data.{{.PathParamGo}}.ValueString(), 1)
+{{- end}}
+
+	httpReq, err := http.NewRequestWithContext(ctx, "{{.Update.Method}}", url, bytes.NewReader(body))
+	if err != nil {
+		resp.Diagnostics.AddError("Request Error", fmt.Sprintf("Unable to create request for {{.ResourceName}}: %s", err))
+		return
+	}
+	httpReq.Header.Set("Content-Type", "application/json")
+
+	httpResp, err := r.client.HTTPClient.Do(httpReq)
+	if err != nil {
+		resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to update {{.ResourceName}}: %s", err))
+		return
+	}
+	defer httpResp.Body.Close()
+
+	respBody, err := io.ReadAll(httpResp.Body)
+	if err != nil {
+		resp.Diagnostics.AddError("Read Error", fmt.Sprintf("Unable to read response for {{.ResourceName}}: %s", err))
+		return
+	}
+
+	var envelope {{.ResourceNamePascal}}APIEnvelope
+	if err := json.Unmarshal(respBody, &envelope); err != nil {
+		resp.Diagnostics.AddError("Parse Error", fmt.Sprintf("Unable to parse response for {{.ResourceName}}: %s", err))
+		return
+	}
+
+	if !envelope.Success {
+		resp.Diagnostics.AddError(envelope.Error.Code, envelope.Error.Message)
+		return
+	}
+
+	r.fromAPIModel(&envelope.Data, &data)
+{{- else}}
+	resp.Diagnostics.AddError("Not Implemented", "Update is not available for {{.ResourceName}}")
+	return
+{{- end}}
 
 	resp.Diagnostics.Append(resp.State.Set(ctx, &data)...)
 }
@@ -134,12 +342,31 @@ func (r *{{.ResourceNamePascal}}Resource) Delete(ctx context.Context, req resour
 		return
 	}
 
-	// TODO: implement API call
-	// httpResp, err := r.client.Do(httpReq)
-	// if err != nil {
-	//     resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to delete {{.ResourceName}}, got error: %s", err))
-	//     return
-	// }
+{{- if .Delete}}
+	url := r.client.Endpoint + "{{.Delete.Path}}"
+{{- if .PathParam}}
+	url = strings.Replace(url, "{{"{"}}{{.PathParam}}{{"}"}}", data.{{.PathParamGo}}.ValueString(), 1)
+{{- end}}
+
+	httpReq, err := http.NewRequestWithContext(ctx, "{{.Delete.Method}}", url, nil)
+	if err != nil {
+		resp.Diagnostics.AddError("Request Error", fmt.Sprintf("Unable to create request for {{.ResourceName}}: %s", err))
+		return
+	}
+
+	httpResp, err := r.client.HTTPClient.Do(httpReq)
+	if err != nil {
+		resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to delete {{.ResourceName}}: %s", err))
+		return
+	}
+	defer httpResp.Body.Close()
+
+	if httpResp.StatusCode != http.StatusOK && httpResp.StatusCode != http.StatusNoContent {
+		resp.Diagnostics.AddError("Delete Error", fmt.Sprintf("Unexpected status %d deleting {{.ResourceName}}", httpResp.StatusCode))
+	}
+{{- else}}
+	resp.Diagnostics.AddError("Not Implemented", "Delete is not available for {{.ResourceName}}")
+{{- end}}
 }
 
 func (r *{{.ResourceNamePascal}}Resource) ImportState(ctx context.Context, req resource.ImportStateRequest, resp *resource.ImportStateResponse) {

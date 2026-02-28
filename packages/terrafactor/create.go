@@ -56,6 +56,15 @@ func renderResources(src, dst string, data TemplateData, resources []ResourceSpe
 		resData.ResourceNamePascal = res.ResourceNamePascal
 		resData.ResourceDescription = res.ResourceDescription
 		resData.Fields = res.Fields
+		resData.CollectionPath = res.CollectionPath
+		resData.DetailPath = res.DetailPath
+		resData.PathParam = res.PathParam
+		resData.PathParamField = res.PathParamField
+		resData.PathParamGo = snakeToPascal(res.PathParamField)
+		resData.Create = res.Create
+		resData.Read = res.Read
+		resData.Update = res.Update
+		resData.Delete = res.Delete
 
 		for _, tmplRel := range perResourceTemplates {
 			tmplSrc := filepath.Join(src, filepath.FromSlash(tmplRel))

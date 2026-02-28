@@ -51,12 +51,27 @@ type AuthorBlock struct {
 // Resource types
 // ---------------------------------------------------------------------------
 
+// CRUDOp describes a single HTTP operation extracted from the OpenAPI spec.
+type CRUDOp struct {
+	Method      string // "POST", "GET", "PUT", "PATCH", "DELETE"
+	Path        string // e.g. "/sentinel/surveillance/policies/{name}"
+	OperationID string // e.g. "createPolicy"
+}
+
 // ResourceSpec describes one API resource extracted from the OpenAPI spec.
 type ResourceSpec struct {
 	ResourceName        string
 	ResourceNamePascal  string
 	ResourceDescription string
 	Fields              []ResourceField
+	CollectionPath      string  // e.g. "/sentinel/surveillance/policies"
+	DetailPath          string  // e.g. "/sentinel/surveillance/policies/{name}"
+	PathParam           string  // e.g. "name" — from {name} segment
+	PathParamField      string  // snake_case model field that maps to path param
+	Create              *CRUDOp
+	Read                *CRUDOp
+	Update              *CRUDOp
+	Delete              *CRUDOp
 }
 
 // ResourceField describes a single attribute of a resource.
@@ -91,6 +106,16 @@ type TemplateData struct {
 	License             string
 	APISpec             string
 	PrevResources       map[string][]string // previous state resources; populated by ApplyProvider for pruning
+	// Per-resource CRUD fields (set during per-resource rendering)
+	CollectionPath string
+	DetailPath     string
+	PathParam      string
+	PathParamField string
+	PathParamGo    string // PascalCase for Go struct access
+	Create         *CRUDOp
+	Read           *CRUDOp
+	Update         *CRUDOp
+	Delete         *CRUDOp
 }
 
 // ---------------------------------------------------------------------------
@@ -106,6 +131,7 @@ type openAPIPathItem struct {
 	Get    *openAPIOperation `yaml:"get"`
 	Post   *openAPIOperation `yaml:"post"`
 	Put    *openAPIOperation `yaml:"put"`
+	Patch  *openAPIOperation `yaml:"patch"`
 	Delete *openAPIOperation `yaml:"delete"`
 }
 
@@ -153,6 +179,23 @@ type openAPISchemaRef struct {
 }
 
 var paramSegment = regexp.MustCompile(`^\{.+\}$`)
+
+// findDetailPath finds the detail path for a collection path and returns
+// the detail path and the parameter name (e.g. "name" from "{name}").
+func findDetailPath(collectionPath string, paths map[string]openAPIPathItem) (string, string) {
+	prefix := collectionPath + "/"
+	for path := range paths {
+		if !strings.HasPrefix(path, prefix) {
+			continue
+		}
+		remainder := path[len(prefix):]
+		if paramSegment.MatchString(remainder) {
+			param := remainder[1 : len(remainder)-1] // strip { }
+			return path, param
+		}
+	}
+	return "", ""
+}
 
 // ---------------------------------------------------------------------------
 // Entry point
@@ -323,11 +366,42 @@ func ParseOpenAPI(specPath string) ([]ResourceSpec, error) {
 
 		fields := extractFields(&schema, &doc)
 
+		detailPath, pathParam := findDetailPath(path, doc.Paths)
+
+		var createOp, readOp, updateOp, deleteOp *CRUDOp
+
+		if item.Post != nil {
+			createOp = &CRUDOp{Method: "POST", Path: path, OperationID: item.Post.OperationID}
+		}
+
+		if detailPath != "" {
+			detailItem := doc.Paths[detailPath]
+			if detailItem.Get != nil {
+				readOp = &CRUDOp{Method: "GET", Path: detailPath, OperationID: detailItem.Get.OperationID}
+			}
+			if detailItem.Put != nil {
+				updateOp = &CRUDOp{Method: "PUT", Path: detailPath, OperationID: detailItem.Put.OperationID}
+			} else if detailItem.Patch != nil {
+				updateOp = &CRUDOp{Method: "PATCH", Path: detailPath, OperationID: detailItem.Patch.OperationID}
+			}
+			if detailItem.Delete != nil {
+				deleteOp = &CRUDOp{Method: "DELETE", Path: detailPath, OperationID: detailItem.Delete.OperationID}
+			}
+		}
+
 		resources = append(resources, ResourceSpec{
 			ResourceName:        name,
 			ResourceNamePascal:  pascal(name),
 			ResourceDescription: fmt.Sprintf("Manages a %s resource.", pascal(name)),
 			Fields:              fields,
+			CollectionPath:      path,
+			DetailPath:          detailPath,
+			PathParam:           pathParam,
+			PathParamField:      pathParam,
+			Create:              createOp,
+			Read:                readOp,
+			Update:              updateOp,
+			Delete:              deleteOp,
 		})
 	}
 

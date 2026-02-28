@@ -6,6 +6,7 @@ package provider
 import (
 	"context"
 	"net/http"
+	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/ephemeral"
@@ -14,6 +15,12 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 )
+
+// APIClient wraps *http.Client with the configured API endpoint.
+type APIClient struct {
+	HTTPClient *http.Client
+	Endpoint   string
+}
 
 // Ensure {{.ProviderNamePascal}}Provider satisfies various provider interfaces.
 var _ provider.Provider = &{{.ProviderNamePascal}}Provider{}
@@ -57,7 +64,12 @@ func (p *{{.ProviderNamePascal}}Provider) Configure(ctx context.Context, req pro
 		return
 	}
 
-	client := http.DefaultClient
+	endpoint := strings.TrimRight(data.Endpoint.ValueString(), "/")
+
+	client := &APIClient{
+		HTTPClient: http.DefaultClient,
+		Endpoint:   endpoint,
+	}
 	resp.DataSourceData = client
 	resp.ResourceData = client
 }
