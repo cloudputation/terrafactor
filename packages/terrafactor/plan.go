@@ -88,6 +88,7 @@ type TemplateData struct {
 	CopyrightHolder     string
 	License             string
 	APISpec             string
+	PrevResources       map[string][]string // previous state resources; populated by ApplyProvider for pruning
 }
 
 // ---------------------------------------------------------------------------

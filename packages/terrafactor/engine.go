@@ -99,6 +99,7 @@ func ApplyProvider(rootDir, providerHCLPath string) error {
 	src := filepath.Join(rootDir, ScaffoldDir)
 	dst := filepath.Join(rootDir, EngineBaseDir, data.ProviderName)
 
+	data.PrevResources = prev
 	rendered, copied, err := rerenderProvider(src, dst, data, resources)
 	if err != nil {
 		return err
