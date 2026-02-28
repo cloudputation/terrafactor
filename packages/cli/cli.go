@@ -126,10 +126,38 @@ func cmdProvider() *cobra.Command {
 		},
 	}
 
+	installCmd := &cobra.Command{
+		Use:   "install <provider.hcl>",
+		Short: "Build the provider binary and configure Terraform dev_overrides in ~/.terraformrc",
+		Args:  cobra.ExactArgs(1),
+		Run: func(cmd *cobra.Command, args []string) {
+			providerHCL := args[0]
+			log.Info("Installing provider", "config", providerHCL)
+			if err := terrafactor.InstallProvider(config.RootDir, providerHCL); err != nil {
+				log.Info(err.Error())
+			}
+		},
+	}
+
+	uninstallCmd := &cobra.Command{
+		Use:   "uninstall <provider.hcl>",
+		Short: "Remove the provider binary and its dev_overrides entry from ~/.terraformrc",
+		Args:  cobra.ExactArgs(1),
+		Run: func(cmd *cobra.Command, args []string) {
+			providerHCL := args[0]
+			log.Info("Uninstalling provider", "config", providerHCL)
+			if err := terrafactor.UninstallProvider(config.RootDir, providerHCL); err != nil {
+				log.Info(err.Error())
+			}
+		},
+	}
+
 	providerCmd.AddCommand(buildCmd)
 	providerCmd.AddCommand(planCmd)
 	providerCmd.AddCommand(applyCmd)
 	providerCmd.AddCommand(destroyCmd)
+	providerCmd.AddCommand(installCmd)
+	providerCmd.AddCommand(uninstallCmd)
 
 	return providerCmd
 }

@@ -451,7 +451,7 @@ func mapField(name string, prop openAPISchema, isRequired bool) ResourceField {
 		Optional:    optional,
 		Computed:    computed,
 		Sensitive:   sensitive,
-		Description: prop.Description,
+		Description: strings.TrimSpace(strings.ReplaceAll(prop.Description, "\n", " ")),
 	}
 }
 
