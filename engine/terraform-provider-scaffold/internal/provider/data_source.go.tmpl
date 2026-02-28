@@ -5,11 +5,17 @@ package provider
 
 import (
 	"context"
+{{- if .Read}}
 	"encoding/json"
+{{- end}}
 	"fmt"
+{{- if .Read}}
 	"io"
 	"net/http"
+{{- end}}
+{{- if and .Read .PathParam}}
 	"strings"
+{{- end}}
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"

@@ -4,13 +4,23 @@
 package provider
 
 import (
+{{- if or .Create .Update}}
 	"bytes"
+{{- end}}
 	"context"
+{{- if or .Create .Read .Update}}
 	"encoding/json"
+{{- end}}
 	"fmt"
+{{- if or .Create .Read .Update}}
 	"io"
+{{- end}}
+{{- if or .Create .Read .Update .Delete}}
 	"net/http"
+{{- end}}
+{{- if and .PathParam (or .Read .Update .Delete)}}
 	"strings"
+{{- end}}
 
 	"github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
@@ -100,7 +110,15 @@ func (r *{{.ResourceNamePascal}}Resource) toAPIModel(data *{{.ResourceNamePascal
 func (r *{{.ResourceNamePascal}}Resource) fromAPIModel(m *{{.ResourceNamePascal}}APIModel, data *{{.ResourceNamePascal}}ResourceModel) {
 {{- range .Fields}}
 {{- if eq .GoType "types.String"}}
+{{- if .Optional}}
+	if m.{{.GoName}} != "" {
+		data.{{.GoName}} = types.StringValue(m.{{.GoName}})
+	} else {
+		data.{{.GoName}} = types.StringNull()
+	}
+{{- else}}
 	data.{{.GoName}} = types.StringValue(m.{{.GoName}})
+{{- end}}
 {{- else if eq .GoType "types.Int64"}}
 	if m.{{.GoName}} != nil {
 		data.{{.GoName}} = types.Int64Value(*m.{{.GoName}})
