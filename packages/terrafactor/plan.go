@@ -70,6 +70,8 @@ type ResourceField struct {
 	Computed    bool
 	Sensitive   bool
 	Description string
+	Children    []ResourceField // nested attrs for SingleNestedAttribute
+	ElemType    string          // element type for List/Map (e.g. "types.StringType")
 }
 
 // TemplateData is the dot-context passed to every .tmpl file.
@@ -396,6 +398,8 @@ func refToName(ref string) string {
 	return ""
 }
 
+const maxRefDepth = 8
+
 func extractFields(schema *openAPISchema, doc *openAPIDoc) []ResourceField {
 	required := make(map[string]bool, len(schema.Required))
 	for _, r := range schema.Required {
@@ -426,7 +430,7 @@ func extractFields(schema *openAPISchema, doc *openAPIDoc) []ResourceField {
 			}
 		}
 
-		field := mapField(name, resolved, required[name])
+		field := mapField(name, resolved, required[name], doc, 0)
 		fields = append(fields, field)
 	}
 
@@ -434,16 +438,41 @@ func extractFields(schema *openAPISchema, doc *openAPIDoc) []ResourceField {
 	return fields
 }
 
-func mapField(name string, prop openAPISchema, isRequired bool) ResourceField {
+func extractChildFields(schema *openAPISchema, doc *openAPIDoc, depth int) []ResourceField {
+	if depth >= maxRefDepth {
+		return nil
+	}
+
+	required := make(map[string]bool, len(schema.Required))
+	for _, r := range schema.Required {
+		required[r] = true
+	}
+
+	var fields []ResourceField
+	for name, prop := range schema.Properties {
+		resolved := prop
+		if prop.Ref != "" {
+			if s, ok := doc.Components.Schemas[refToName(prop.Ref)]; ok {
+				resolved = s
+			}
+		}
+		fields = append(fields, mapField(name, resolved, required[name], doc, depth))
+	}
+
+	sortFields(fields)
+	return fields
+}
+
+func mapField(name string, prop openAPISchema, isRequired bool, doc *openAPIDoc, depth int) ResourceField {
 	goName := snakeToPascal(name)
-	goType, tfType := mapType(prop)
+	goType, tfType, elemType := mapType(prop)
 
 	computed := prop.ReadOnly
 	sensitive := prop.WriteOnly
 	required := isRequired && !prop.ReadOnly
 	optional := !required && !computed
 
-	return ResourceField{
+	field := ResourceField{
 		Name:        name,
 		GoName:      goName,
 		GoType:      goType,
@@ -453,26 +482,50 @@ func mapField(name string, prop openAPISchema, isRequired bool) ResourceField {
 		Computed:    computed,
 		Sensitive:   sensitive,
 		Description: strings.TrimSpace(strings.ReplaceAll(prop.Description, "\n", " ")),
+		ElemType:    elemType,
+	}
+
+	if prop.Type == "object" && prop.AdditionalProperties == nil &&
+		len(prop.Properties) > 0 && depth < maxRefDepth {
+		field.Children = extractChildFields(&prop, doc, depth+1)
+	}
+
+	return field
+}
+
+func mapType(prop openAPISchema) (goType, tfType, elemType string) {
+	switch prop.Type {
+	case "boolean":
+		return "types.Bool", "schema.BoolAttribute", ""
+	case "integer":
+		return "types.Int64", "schema.Int64Attribute", ""
+	case "number":
+		return "types.Float64", "schema.Float64Attribute", ""
+	case "array":
+		return "types.List", "schema.ListAttribute", resolveElemType(prop.Items)
+	case "object":
+		if prop.AdditionalProperties != nil {
+			return "types.Map", "schema.MapAttribute", resolveElemType(prop.AdditionalProperties)
+		}
+		return "types.Object", "schema.SingleNestedAttribute", ""
+	default:
+		return "types.String", "schema.StringAttribute", ""
 	}
 }
 
-func mapType(prop openAPISchema) (string, string) {
-	switch prop.Type {
+func resolveElemType(item *openAPISchema) string {
+	if item == nil {
+		return "types.StringType"
+	}
+	switch item.Type {
 	case "boolean":
-		return "types.Bool", "schema.BoolAttribute"
+		return "types.BoolType"
 	case "integer":
-		return "types.Int64", "schema.Int64Attribute"
+		return "types.Int64Type"
 	case "number":
-		return "types.Float64", "schema.Float64Attribute"
-	case "array":
-		return "types.List", "schema.ListAttribute"
-	case "object":
-		if prop.AdditionalProperties != nil {
-			return "types.Map", "schema.MapAttribute"
-		}
-		return "types.Object", "schema.SingleNestedAttribute"
+		return "types.Float64Type"
 	default:
-		return "types.String", "schema.StringAttribute"
+		return "types.StringType"
 	}
 }
 

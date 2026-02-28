@@ -46,33 +46,7 @@ func (r *{{.ResourceNamePascal}}Resource) Schema(ctx context.Context, req resour
 		MarkdownDescription: "{{.ResourceDescription}}",
 
 		Attributes: map[string]schema.Attribute{
-{{- range .Fields}}
-{{- if eq .Name "id"}}
-			"id": schema.StringAttribute{
-				Computed:            true,
-				MarkdownDescription: "{{.Description}}",
-				PlanModifiers: []planmodifier.String{
-					stringplanmodifier.UseStateForUnknown(),
-				},
-			},
-{{- else}}
-			"{{.Name}}": {{.TFType}}{
-				MarkdownDescription: "{{.Description}}",
-				{{- if .Required}}
-				Required:  true,
-				{{- end}}
-				{{- if .Optional}}
-				Optional:  true,
-				{{- end}}
-				{{- if .Computed}}
-				Computed:  true,
-				{{- end}}
-				{{- if .Sensitive}}
-				Sensitive: true,
-				{{- end}}
-			},
-{{- end}}
-{{- end}}
+{{- template "renderAttributes" .Fields}}
 		},
 	}
 }
@@ -108,6 +82,9 @@ func (r *{{.ResourceNamePascal}}Resource) Create(ctx context.Context, req resour
 	//     resp.Diagnostics.AddError("Client Error", fmt.Sprintf("Unable to create {{.ResourceName}}, got error: %s", err))
 	//     return
 	// }
+
+	// TODO: replace with ID from API response
+	data.Id = types.StringValue("placeholder-id")
 
 	tflog.Trace(ctx, "created {{.ResourceName}} resource")
 	resp.Diagnostics.Append(resp.State.Set(ctx, &data)...)
@@ -168,3 +145,62 @@ func (r *{{.ResourceNamePascal}}Resource) Delete(ctx context.Context, req resour
 func (r *{{.ResourceNamePascal}}Resource) ImportState(ctx context.Context, req resource.ImportStateRequest, resp *resource.ImportStateResponse) {
 	resource.ImportStatePassthroughID(ctx, path.Root("id"), req, resp)
 }
+{{define "renderAttributes"}}
+{{- range .}}
+{{- if eq .Name "id"}}
+			"id": schema.StringAttribute{
+				Computed:            true,
+				MarkdownDescription: "{{.Description}}",
+				PlanModifiers: []planmodifier.String{
+					stringplanmodifier.UseStateForUnknown(),
+				},
+			},
+{{- else if .Children}}
+			"{{.Name}}": schema.SingleNestedAttribute{
+				MarkdownDescription: "{{.Description}}",
+				{{- if .Required}}
+				Required:  true,
+				{{- end}}
+				{{- if .Optional}}
+				Optional:  true,
+				{{- end}}
+				{{- if .Computed}}
+				Computed:  true,
+				{{- end}}
+				Attributes: map[string]schema.Attribute{
+{{- template "renderAttributes" .Children}}
+				},
+			},
+{{- else if .ElemType}}
+			"{{.Name}}": {{.TFType}}{
+				MarkdownDescription: "{{.Description}}",
+				{{- if .Required}}
+				Required:  true,
+				{{- end}}
+				{{- if .Optional}}
+				Optional:  true,
+				{{- end}}
+				{{- if .Computed}}
+				Computed:  true,
+				{{- end}}
+				ElementType: {{.ElemType}},
+			},
+{{- else}}
+			"{{.Name}}": {{.TFType}}{
+				MarkdownDescription: "{{.Description}}",
+				{{- if .Required}}
+				Required:  true,
+				{{- end}}
+				{{- if .Optional}}
+				Optional:  true,
+				{{- end}}
+				{{- if .Computed}}
+				Computed:  true,
+				{{- end}}
+				{{- if .Sensitive}}
+				Sensitive: true,
+				{{- end}}
+			},
+{{- end}}
+{{- end}}
+{{- end}}

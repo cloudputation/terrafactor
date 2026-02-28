@@ -42,30 +42,7 @@ func (d *{{.ResourceNamePascal}}DataSource) Schema(ctx context.Context, req data
 		MarkdownDescription: "{{.ResourceDescription}}",
 
 		Attributes: map[string]schema.Attribute{
-{{- range .Fields}}
-{{- if eq .Name "id"}}
-			"id": schema.StringAttribute{
-				Computed:            true,
-				MarkdownDescription: "{{.Description}}",
-			},
-{{- else}}
-			"{{.Name}}": {{.TFType}}{
-				MarkdownDescription: "{{.Description}}",
-				{{- if .Required}}
-				Required:  true,
-				{{- end}}
-				{{- if .Optional}}
-				Optional:  true,
-				{{- end}}
-				{{- if .Computed}}
-				Computed:  true,
-				{{- end}}
-				{{- if .Sensitive}}
-				Sensitive: true,
-				{{- end}}
-			},
-{{- end}}
-{{- end}}
+{{- template "renderAttributes" .Fields}}
 		},
 	}
 }
@@ -105,3 +82,59 @@ func (d *{{.ResourceNamePascal}}DataSource) Read(ctx context.Context, req dataso
 	tflog.Trace(ctx, "read {{.ResourceName}} data source")
 	resp.Diagnostics.Append(resp.State.Set(ctx, &data)...)
 }
+{{define "renderAttributes"}}
+{{- range .}}
+{{- if eq .Name "id"}}
+			"id": schema.StringAttribute{
+				Computed:            true,
+				MarkdownDescription: "{{.Description}}",
+			},
+{{- else if .Children}}
+			"{{.Name}}": schema.SingleNestedAttribute{
+				MarkdownDescription: "{{.Description}}",
+				{{- if .Required}}
+				Required:  true,
+				{{- end}}
+				{{- if .Optional}}
+				Optional:  true,
+				{{- end}}
+				{{- if .Computed}}
+				Computed:  true,
+				{{- end}}
+				Attributes: map[string]schema.Attribute{
+{{- template "renderAttributes" .Children}}
+				},
+			},
+{{- else if .ElemType}}
+			"{{.Name}}": {{.TFType}}{
+				MarkdownDescription: "{{.Description}}",
+				{{- if .Required}}
+				Required:  true,
+				{{- end}}
+				{{- if .Optional}}
+				Optional:  true,
+				{{- end}}
+				{{- if .Computed}}
+				Computed:  true,
+				{{- end}}
+				ElementType: {{.ElemType}},
+			},
+{{- else}}
+			"{{.Name}}": {{.TFType}}{
+				MarkdownDescription: "{{.Description}}",
+				{{- if .Required}}
+				Required:  true,
+				{{- end}}
+				{{- if .Optional}}
+				Optional:  true,
+				{{- end}}
+				{{- if .Computed}}
+				Computed:  true,
+				{{- end}}
+				{{- if .Sensitive}}
+				Sensitive: true,
+				{{- end}}
+			},
+{{- end}}
+{{- end}}
+{{- end}}
